@@ -1,0 +1,128 @@
+/* 🔹 Main Section */
+.why-choose-us-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🔹 Section Heading */
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 🔹 Curved SVG Background */
+.curve-background svg {
+  margin-bottom: 40px;
+}
+
+/* 🔹 Box Container */
+.box-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔹 Info Box Style */
+.info-box {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #111827;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔹 Staggered Layout */
+.info-box:nth-child(1) {
+  transform: translateX(0%);
+}
+.info-box:nth-child(2) {
+  transform: translateX(5%);
+}
+.info-box:nth-child(3) {
+  transform: translateX(10%);
+}
+
+/* 🔹 Hover Effect */
+.info-box:hover {
+  transform: scale(1.02) translateX(10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .info-box {
+    font-size: 1rem;
+  }
+
+  .info-box:nth-child(2) {
+    transform: translateX(3%);
+  }
+  .info-box:nth-child(3) {
+    transform: translateX(6%);
+  }
+}
+
+@media (max-width: 768px) {
+  .box-container {
+    gap: 20px;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .info-box {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .info-box:nth-child(2),
+  .info-box:nth-child(3) {
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .info-box {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .box-container {
+    gap: 15px;
+  }
+
+  .info-box:nth-child(1),
+  .info-box:nth-child(2),
+  .info-box:nth-child(3) {
+    transform: translateX(0%);
+  }
+}

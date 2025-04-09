@@ -1,0 +1,163 @@
+/* Base styles */
+.boxes {
+  padding: 100px;
+  display: flex;
+  gap: 100px;
+  width: 85%;
+  margin: auto;
+}
+
+.box1 {
+  width: 500px;
+  height: 194px;
+  text-align: justify;
+}
+
+.box2 img {
+  width: 500px;
+  height: 194px;
+  text-align: justify;
+}
+
+.certificate-grid {
+  display: grid;
+  width: 100%; /* Adjusted for full width */
+  max-width: 1680px; /* Cap max width */
+  gap: 80px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .boxes {
+      gap: 50px;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .box1, .box2 img {
+      width: 100%;
+      height: auto;
+  }
+
+  .certificate-grid {
+      grid-template-columns: 1fr; /* Single-column layout */
+      gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .boxes {
+      padding: 50px;
+      width: 95%;
+  }
+
+  .certificate-grid {
+      gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boxes {
+      padding: 20px;
+  }
+
+  .certificate-grid {
+      grid-template-columns: 1fr; /* Single-column layout for small screens */
+      gap: 20px;
+  }
+
+  .box1, .box2 img {
+      width: 100%; /* Full width */
+      height: auto;
+  }
+}
+/* 🔷 Introduction Section */
+.introduction-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 80%;
+  margin: 60px auto;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.introduction-container:hover {
+  transform: scale(1.02);
+}
+
+.introduction-text {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+  padding: 20px;
+}
+
+.introduction-text h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  border-left: 5px solid #007bff;
+  padding-left: 15px;
+}
+
+.introduction-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduction-image img {
+  width: 90%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+  .introduction-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .introduction-text {
+    padding: 10px;
+  }
+
+  .introduction-text h2 {
+    text-align: center;
+    border-left: none;
+    border-bottom: 3px solid #007bff;
+    padding-left: 0;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .introduction-container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .introduction-text {
+    font-size: 16px;
+  }
+
+  .introduction-image img {
+    width: 100%;
+  }
+}

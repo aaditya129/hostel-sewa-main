@@ -1,0 +1,110 @@
+/* TeamGrid.css */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(396px, 1fr));
+    gap: 32px;
+    width: 83%; /* Hug width */
+    margin: 0 auto;
+  }
+  
+  .team-card {
+    width: 396px; /* Width of each card */
+    height: auto; /* Height of each card */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 1; /* No opacity as per default */
+  }
+  
+  .team-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px 4px 0 0;
+    object-fit: contain;
+  }
+  
+  .team-info {
+    padding: 10px 15px;
+  }
+  
+  .team-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .team-title {
+    font-size: 0.9rem;
+    color: #2581C4; /* Blue for titles */
+    margin: 5px 0;
+  }
+  
+  .team-phone, .team-role {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 2px 0;
+  }
+/* Medium Screens (1024px and below) */
+@media (max-width: 1024px) {
+  .team-grid {
+    width: 90%;
+  }
+
+  .team-card {
+    width: 340px;
+    height: 400px;
+  }
+
+  .team-image {
+    height: 250px;
+  }
+}
+
+/* Tablet Screens (768px and below) */
+@media (max-width: 768px) {
+  .team-grid {
+    width: 95%;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: 300px;
+    height: 370px;
+  }
+
+  .team-image {
+    height: 220px;
+  }
+}
+
+/* Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+  .team-grid {
+    width: 100%;
+    margin: auto;
+  }
+
+  .team-card {
+    /* width: 100%; */
+    width: 80%;
+    margin: auto;
+    height: 320px;
+  }
+
+  .team-image {
+    height: 180px;
+  }
+
+  .team-name {
+    font-size: 1rem;
+  }
+
+  .team-title, .team-phone, .team-role {
+    font-size: 0.8rem;
+  }
+}

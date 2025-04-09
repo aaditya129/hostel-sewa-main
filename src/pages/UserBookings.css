@@ -1,0 +1,97 @@
+.booking-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Improved Grid Layout for Booking Cards */
+  .booking-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .booking-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .booking-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .booking-card h3 {
+    margin: 0 0 12px;
+    color: #007bff;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .booking-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* ✅ Status Label Styling */
+  .status {
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    text-transform: capitalize;
+  }
+  
+  .status.pending {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .status.completed {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .status.canceled {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* ✅ Payment Screenshot Image Styling */
+  .payment-image {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ✅ Loading & No Bookings Message */
+  .loading, .no-bookings {
+    font-size: 18px;
+    color: #777;
+    margin-top: 20px;
+  }
+  

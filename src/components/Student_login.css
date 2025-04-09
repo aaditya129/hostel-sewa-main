@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.auth-wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../assets/student_login.jpeg') no-repeat center center/cover; /* Add your image */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .auth-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherit the background image */
+    filter: blur(8px); /* Blur the background image */
+    transform: scale(1.1); /* Slight zoom for better aesthetics */
+    z-index: 1;
+  }
+  .auth-card {
+    position: relative;
+    z-index: 2; /* Place the login box above the blurred background */
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    top: 40%;
+    left: 50%;
+  }
+.auth-card{
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+ 
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    /* border: 1px solid black; */
+}
+.signup-card{
+    transform: translate(100%, -50%);
+    opacity: 0;
+}
+.auth-wrapper.show-signup .signup-card{
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+.auth-wrapper.show-signup .login-card{
+    transform: translate(-100%, -50%);
+    opacity: 0;
+}
+.auth-header{
+    font-size: 28px; /* Larger text size */
+    font-weight: 700; /* Bold font */
+    /* color: #1e90ff;  */
+    text-align: center; /* Centered text */
+    margin-bottom: 20px; /* Space below the header */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+
+}
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.auth-field{
+    position: relative;
+}
+.auth-input,
+.auth-password,
+.auth-submit{
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+.auth-input:focus,
+.auth-password:focus{
+    border-color: #4070f4;
+    outline: none;
+}
+.toggle-visibility{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+}
+.auth-actions{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.reset-password{
+    color: #4070f4;
+    text-decoration: none;
+}
+.reset-password:hover{
+    text-decoration: underline;
+}
+.auth-button-group{
+    display: flex;
+    justify-content: center;
+}
+.auth-submit{
+    background-color: #4070f4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.auth-submit:hover{
+    background-color: #305db0;
+}
+.auth-footer{
+    text-align: center;
+    margin-top: 20px;
+}
+.auth-footer span,
+.auth-footer a{
+    font-size: 14px;
+    color: #333;
+}
+.auth-footer a{
+    color: #4070f4;
+    text-decoration: none;
+}
+.auth-footer a:hover{
+    text-decoration: underline;
+}
+.separator{
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+    position: relative;
+}
+.separator::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 0 10px;
+    color: #888;
+}
+.social-login{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.social-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.facebook-button{
+    background-color: #4267b2;
+    color: #fff;
+}
+.google-button{
+    border-color: #ddd;
+    background-color: #ffffff;
+    color: #333;
+}
+.google-button:focus,
+.google-button:active{
+    background-color: #ffffff;
+    color: #333;
+    border-color: #ddd;
+    outline: none;
+}
+.facebook-icon,
+.google-icon{
+    margin-right: 10px;
+}
+.google-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.success-message {
+    position: fixed; /* Ensures it overlays the screen */
+    top: 50%;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it is above other elements */
+  }
+  
+  .success-message h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: white;
+  }
+  
+  .success-message p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+
+@media screen and (max-width: 400px){
+    .auth-card {
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .auth-wrapper{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .auth-card{
+        max-width: 90%;
+        padding: 20px;
+    }
+    .social-login{
+        flex-direction: column;
+        gap: 5px;
+    }
+    .social-button{
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .auth-header{
+        font-size: 22px;
+    }
+    .auth-input,
+    .auth-password,
+    .auth-submit{
+        font-size: 12px;
+        padding: 10px;
+    }
+    .toggle-visibility{
+        font-size: 16px;
+    }
+    .auth-footer span,
+    .auth-footer a{
+        font-size: 12px;
+    }
+    .separator::before{
+        font-size: 12px;
+    }
+    .facebook-icon,
+    .google-icon{
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .auth-card{
+        padding: 15px;
+    }
+    .auth-header{
+        font-size: 18px;
+    }
+    .auth-footer{
+        margin-top: 10px;
+    }
+}
+

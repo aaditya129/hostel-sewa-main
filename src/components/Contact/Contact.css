@@ -1,0 +1,279 @@
+/* Cover Container */
+.cover-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.overlay_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Added padding for better spacing */
+}
+
+/* Layout Container */
+.overlay-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 85%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  color: white;
+  z-index: 2;
+  gap: 40px;
+}
+
+/* Left Side - Contact Form */
+.contact-form-container {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+  min-width: 45%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form .form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Right Side - Contact Details */
+.contact-details-container {
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+  min-width: 45%;
+}
+
+.contact-details-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.contact-details-container p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.contact-details-container h3 {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #2581C4;
+}
+
+/* Map Styling */
+.map-container {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* --- RESPONSIVENESS --- */
+
+/* ✅ Tablet (Medium Screens) */
+@media (max-width: 1024px) {
+  .overlay-content {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 25px;
+  }
+
+  .contact-form-container,
+  .contact-details-container {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .contact-form .form-row {
+    flex-direction: column;
+  }
+
+  .map-container {
+    max-width: 100%;
+  }
+}
+
+/* ✅ Mobile (Small Screens) */
+
+@media (max-width: 768px) {
+  .out {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      scroll-snap-type: x mandatory;
+      padding: 20px 0;
+      width: 100%;
+      margin: 0;
+      -webkit-overflow-scrolling: touch;
+  }
+
+  .outer-border {
+      min-width: 70%;
+      scroll-snap-align: start;
+      margin: 0 15px;
+      flex-shrink: 0;
+      height: auto;
+      padding: 20px;
+  }
+
+  /* Hide scrollbar */
+  .out::-webkit-scrollbar {
+      display: none;
+  }
+
+  .image {
+      width: 55px;
+      height: 55px;
+  }
+
+  .verified-text {
+      font-size: 18px;
+  }
+
+  .description-text {
+      font-size: 13px;
+  }
+
+  .service-text {
+      font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outer-border {
+      min-width: 80%;
+      padding: 15px;
+  }
+
+  .image {
+      width: 50px;
+      height: 50px;
+  }
+
+  .verified-text {
+      font-size: 16px;
+  }
+
+  .description-text {
+      font-size: 12px;
+  }
+
+  .service-text {
+      font-size: 22px;
+  }
+}
+
+/* ✅ Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+  .overlay-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .contact-form-container {
+    padding: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 12px;
+    padding: 8px;
+  }   
+
+  .submit-button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .social-icons {
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .map-container {
+    height: 150px;
+  }
+}

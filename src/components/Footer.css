@@ -1,0 +1,256 @@
+/* Footer.css */
+
+
+
+.footer_one {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px; 
+    margin-left: 80px;/* Space between footer sections */
+    font-family: Inter;
+font-size: 16px;
+}
+.footer_one img{
+    margin-bottom: 40px; 
+}
+.logo_footer {
+    width: 100px; /* Adjust logo size */
+    margin-right: 20px; /* Space between logo and text */
+}
+
+.footer_one ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer_one li {
+    display: flex; /* Align icon and text */
+    align-items: center; /* Center icon and text vertically */
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.icon {
+    margin-right: 10px; /* Space between icon and text */
+    color: #FFFFFF; /* Icon color */
+}
+
+.footer_two {
+   
+    margin-bottom: 80px;
+    text-align: center; /* Center text */
+    font-family: Inter;
+    font-size: 16px;
+
+
+}
+.follow{
+    font-family: Inter;
+font-size: 28px;
+font-weight: 700;
+line-height: 41.6px;
+text-align: left;
+ color: #E94E1B;
+ text-align: center; /* Center text */
+}
+.newsletter_heading{
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 28px;
+    color: #E94E1B;
+}
+
+.follow {
+    margin-bottom: 12px;
+    font-weight: bold; /* Bold the heading */
+}
+
+.footer_three {
+    margin-bottom: 80px;
+    text-align: center; /* Center text */
+}
+
+footer hr {
+    border: 0; /* Remove default border */
+    height: 1px; /* Set height of line */
+    background: #ccc; /* Color of the line */
+    margin: 20px 0; /* Space around the line */
+}
+
+.social_icons {
+    display: flex; /* Align icons horizontally */
+    justify-content: center; /* Center icons */
+    margin-top: 10px; /* Space above icons */
+}
+
+.social_icon {
+    margin: 0 10px; /* Space between icons */
+    font-size: 24px; /* Size of social media icons */
+    color: #FFFFFF; /* Color for social icons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.social_icon:hover {
+    color: #E94E1B; /* Darken icon on hover */
+}
+
+
+
+footer p {
+    margin: 5px 0; /* Space between paragraphs */
+  
+}
+
+footer form {
+    display: flex; /* Align input and button horizontally */
+    justify-content: center; /* Center the form */
+    margin-top: 10px; /* Space above form */
+    flex-direction: column; /* Stack input and button */
+}
+
+footer input[type="email"] {
+    padding: 10px; /* Add padding to input */
+    border: 1px solid #ccc; /* Input border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between input and button */
+    width: 205px; /* Set width for input */
+}
+
+.subscribe_button {
+    padding: 10px 20px; /* Add padding to button */
+    color: #343A40; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    width: 200px;
+}
+
+
+/* Vertical line styling */
+.vertical_line {
+    width: 1px; /* Width of the vertical line */
+    background-color: #ccc; 
+    height: 80px; /* Height of the vertical line */
+    margin: 0 20px; /* Space around the line */
+}
+
+
+footer {
+    background-color: #212529;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 0; /* Removed extra margin */
+    width: 100%;
+}
+
+.footer_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%; /* Full width */
+    text-align: center;
+    font-family: Inter;
+    height: 65px;
+    font-size: 12px;
+    color: white;
+    background-color: #212529;
+    /* margin-top: 10px; */
+
+}
+/* Media queries for responsiveness */
+
+/* For medium-sized screens (tablets) */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        gap: 20px; /* Reduced gap between sections */
+    }
+
+    .footer_one, .footer_two, .footer_three {
+        text-align: center;
+        margin: 10px 0; /* Reduced vertical margin for closer alignment */
+    }
+
+    .footer_one {
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+
+    .vertical_line {
+        display: none; /* Hide vertical line */
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        padding: 10px;
+        font-size: 10px;
+        height: auto;
+    }
+
+    /* Align social icons in a horizontal row with reduced gap */
+    .social_icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+    }
+
+    .social_icon {
+        font-size: 20px;
+    }
+    .footer_bottom p {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 10px;
+        font-size: 10px; /* Adjust font size if needed */
+        gap: 10px; /* Add space between lines */
+        text-align: center; /* Center-align text */
+    }
+}
+
+/* For smaller screens (mobile devices) */
+@media (max-width: 480px) {
+    .footer_one img {
+        width: 80px;
+        margin-bottom: 20px;
+    }
+
+    .follow, .newsletter_heading {
+        font-size: 20px;
+    }
+
+    .footer_one ul, .footer_three form {
+        flex-direction: column;
+    }
+
+    .subscribe_button, footer input[type="email"] {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .footer_bottom p {
+        font-size: 10px;
+    }
+
+    /* Further reduce the gap between sections */
+    footer {
+        gap: 15px; /* Reduced gap for mobile devices */
+    }
+
+    .footer_one, .footer_two, .footer_three {
+        margin: 5px 0; /* Minimized vertical margin */
+    }
+    .footer_bottom p{
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 1px;
+        font-size: 10px; /* Adjust font size if needed */
+     width: 90%;
+        text-align: center; /* Center-align text */
+        align-items: center;
+    }
+}

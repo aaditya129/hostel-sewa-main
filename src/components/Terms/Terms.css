@@ -1,0 +1,36 @@
+.terms {
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+}
+
+.heading-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Media Query for Medium Screens */
+@media (max-width: 768px) {
+    .terms {
+        width: 90%; /* Increase width for smaller screens */
+    }
+    
+    .heading-title {
+        font-size: 1.5em; /* Decrease font size */
+        margin-bottom: 15px;
+    }
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 480px) {
+    .terms {
+        width: 95%; /* Nearly full width for very small screens */
+        margin: 0 auto; /* Center content */
+    }
+    
+    .heading-title {
+        font-size: 1.2em; /* Further decrease font size */
+        margin-bottom: 10px;
+    }
+}

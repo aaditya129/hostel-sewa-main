@@ -1,0 +1,117 @@
+.register-hostel-container {
+  width: 100%; /* Full width */
+  height: 600px; /* Default height */
+  position: relative; /* For absolute positioning of overlay */
+  overflow: hidden; /* Hide overflow */
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.image-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hostel-images {
+width: 100%;
+height: 100%;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.overlay-title {
+  font-size: 42px;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 30px;
+}
+
+.overlay-description {
+  font-size: 16px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.register-button {
+  background-color: #2581C4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.register-button:hover {
+  background-color: #00355C;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .register-hostel-container {
+      height: 500px; /* Reduce height */
+  }
+
+  .overlay-title {
+      font-size: 36px; /* Adjust title font size */
+  }
+
+  .overlay-description {
+      font-size: 14px; /* Adjust description font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .register-hostel-container {
+      height: 400px; /* Further reduce height */
+  }
+
+  .overlay-title {
+      font-size: 28px; /* Smaller title font size */
+  }
+
+  .overlay-description {
+      font-size: 13px; /* Smaller description font size */
+      margin-bottom: 20px;
+  }
+
+  .register-button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-hostel-container {
+      height: 300px; /* Minimum height for small screens */
+  }
+
+  .overlay-title {
+      font-size: 24px; /* Smaller title for mobile */
+  }
+
+  .overlay-description {
+      font-size: 12px; /* Smaller description */
+  }
+
+  .register-button {
+      font-size: 12px;
+      padding: 6px 12px;
+  }
+}

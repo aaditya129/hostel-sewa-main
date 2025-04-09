@@ -1,0 +1,73 @@
+.certificate-grid {
+  display: grid;
+  width: 80%;
+  height: auto; /* Adjust height to scale with content */
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+  grid-template-rows: auto;
+  gap: 20px; /* Added gap for spacing */
+}
+
+/* Heading title styling */
+.heading-title {
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 130px;
+}
+
+/* Image styling */
+.certificate-image {
+  width: 100%;
+  height: 400px; /* Fixed height for large screens */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .certificate-grid {
+      width: 90%; /* Slightly increase grid width */
+      grid-template-columns: 1fr; /* Switch to single column */
+  }
+
+  .heading-title {
+      font-size: 24px; /* Adjust title size */
+      margin-left: 30px; /* Reduce left margin */
+  }
+
+  .certificate-image {
+      height: 600px; /* Adjust image height for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate-grid {
+      width: 100%;
+      gap: 15px;
+  }
+
+  .heading-title {
+      font-size: 22px;
+      margin-left: 20px;
+  }
+
+  .certificate-image {
+      height: 400px; /* Smaller image height */
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-grid {
+      width: 100%;
+      gap: 10px;
+      grid-template-columns: 1fr; /* Single column for small screens */
+  }
+
+  .heading-title {
+      font-size: 20px;
+      margin-left: 10px;
+  }
+
+  .certificate-image {
+      height: auto; /* Let image height adjust naturally */
+  }
+}

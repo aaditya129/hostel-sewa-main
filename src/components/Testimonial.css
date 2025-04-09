@@ -1,0 +1,111 @@
+.testimonial-section {
+  width: 100%; /* Full width */
+  padding: 60px 20px; /* Padding around the section */
+  text-align: center; /* Center text */
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.testimonial-heading {
+  font-size: 25px; /* Font size for heading */
+  font-family: "Inter", sans-serif; /* Font family */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+/* Responsive Testimonial Box */
+.testimonial-box {
+  height: 200px;
+  display: flex; /* Use flexbox for layout */
+  align-items: flex-start; /* Align items at the top */
+  justify-content: flex-start; /* Align items to the left */
+  width: 80%; /* Width of the testimonial box */
+  max-width: 600px; /* Maximum width */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 0 auto; /* Center the box */
+  padding: 20px; /* Padding inside the box */
+}
+
+.testimonial-image {
+  width: 60px; /* Width of the person's face logo */
+  height: 60px; /* Height of the person's face logo */
+  border-radius: 50%; /* Make image circular */
+  margin-right: 15px; /* Space between image and content */
+  object-fit: cover; /* Ensure the image fills the circle */
+}
+
+.testimonial-content {
+  flex: 1; /* Take remaining space */
+  text-align: left; /* Align text to the left */
+}
+
+.name-rating {
+  display: flex; /* Flexbox for name and rating */
+  flex-direction: column; /* Stack name and rating vertically */
+  align-items: flex-start; /* Align items to the start (left) */
+  margin-bottom: 10px; /* Space below the name and rating */
+}
+
+.testimonial-name {
+  font-weight: bold; /* Make the name bold */
+  font-size: 16px; /* Font size for name */
+  color: #333; /* Dark text color */
+}
+
+.rating {
+  font-size: 14px; /* Font size for rating */
+  color: #FFD700; /* Gold color for stars */
+  margin-top: 2px; /* Space above rating */
+}
+
+.testimonial-review {
+  font-size: 14px; /* Font size for review text */
+  color: #333; /* Dark text color */
+  line-height: 1.5; /* Improve line spacing */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .testimonial-box {
+    flex-direction: column; /* Stack image on top of text */
+    align-items: center; /* Center items */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .testimonial-image {
+    margin-right: 0; /* Remove margin when stacked */
+    margin-bottom: 10px; /* Space below image */
+    width: 80px; /* Adjust width for better visibility */
+    height: 80px; /* Adjust height for better visibility */
+  }
+
+  .testimonial-content {
+    text-align: center; /* Center text for a better look */
+  }
+
+  .name-rating {
+    align-items: center; /* Center name and rating */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-heading {
+    font-size: 22px; /* Smaller font size for heading */
+    margin-bottom: 15px; /* Less space below heading */
+  }
+
+  .testimonial-box {
+    width: 90%; /* Increase width for more space */
+    padding: 10px; /* Less padding for mobile */
+  }
+
+  .testimonial-review {
+    font-size: 13px; /* Slightly smaller text for reviews */
+  }
+
+  .testimonial-image {
+    width: 60px; /* Reduce image size */
+    height: 60px; /* Adjust height */
+  }
+}

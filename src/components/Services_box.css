@@ -1,0 +1,161 @@
+/* 🔹 Services Container */
+.out {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 85%;
+    margin: auto;
+    margin-bottom: 60px;
+    padding: 20px;
+}
+
+/* 🔹 Individual Service Box */
+.outer-border {
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: auto;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.outer-border:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Service Card */
+.verified-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 🔹 Service Image */
+.image {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.outer-border:hover .image {
+    transform: scale(1.1);
+}
+
+/* 🔹 Service Title */
+.verified-text {
+    font-size: 22px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Service Description */
+.description-text {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* 🔹 Section Title */
+.service-text {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin: 50px 0;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+    .outer-border {
+        width: 45%;
+        height: auto;
+    }
+
+    .verified-text {
+        font-size: 20px;
+    }
+
+    .description-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .out {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
+        padding: 20px 0;
+        width: 100%;
+        margin: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .outer-border {
+        min-width: 70%;
+        scroll-snap-align: start;
+        margin: 0 15px;
+        flex-shrink: 0;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* Hide scrollbar */
+    .out::-webkit-scrollbar {
+        display: none;
+    }
+
+    .image {
+        width: 55px;
+        height: 55px;
+    }
+
+    .verified-text {
+        font-size: 18px;
+    }
+
+    .description-text {
+        font-size: 13px;
+    }
+
+    .service-text {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .outer-border {
+        min-width: 80%;
+        padding: 15px;
+    }
+
+    .image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .verified-text {
+        font-size: 16px;
+    }
+
+    .description-text {
+        font-size: 12px;
+    }
+
+    .service-text {
+        font-size: 22px;
+    }
+}

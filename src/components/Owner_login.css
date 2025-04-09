@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container for the owner login section */
+.owner-container {
+  position: relative;
+}
+
+.owner-image {
+  width: 100%;
+  height: 818px;
+  display: block;
+  
+}
+
+.owner-text {
+  position: absolute;
+  width: 658px;
+  height: 125px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 124.8px;
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+}
+
+.owner-form {
+  position: relative;
+  left: 31%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+  margin: 20px;
+  width: 600px;
+  height: auto;
+  font-family: "Inter", sans-serif;
+}
+
+.owner-form img {
+  margin-bottom: 20px;
+  height: 200px;
+
+}
+
+.owner-form h1 {
+  font-size: 40px;
+  color: #e94e1b;
+  margin-bottom: 40px;
+}
+
+.owner-form span {
+  color: #2581c4;
+}
+
+.owner-border {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 584px;
+  padding: 50px;
+  height: 593px;
+}
+
+.owner-form p {
+  color: #2581c4;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 31.2px;
+}
+
+.owner-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.owner-form input[type="text"],
+.owner-form input[type="password"] {
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.owner-remember-me {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 0;
+  gap: 8px;
+}
+
+.owner-form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.owner-form button:hover {
+  background-color: #0056b3;
+}
+
+.owner-forgot-password {
+  color: #007bff;
+  text-align: right;
+  margin: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.owner-social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.owner-social-icon {
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
+
+.new:hover {
+  color: #e94e1b;
+}
+
+.owner-input-icon {
+  position: relative;
+  width: 100%;
+}
+
+.owner-input-icon input[type="text"],
+.owner-input-icon input[type="password"] {
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 480px;
+}
+
+.input-icon-left {
+  position: absolute;
+  left: 95%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+}
+
+.owner-eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+}
+
+.owner-eye-icon:hover {
+  color: #333;
+}
+
+.owner-social-media {
+  margin-bottom: 25px;
+}
+
+.owner-register-form {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: #27374d;
+  cursor: pointer;
+}
+
+/* Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .owner-image {
+    height: 300px;
+  }
+
+  .owner-text {
+    width: 80%;
+    font-size: 8vw;
+    line-height: 1.2;
+  }
+
+  .owner-form {
+    width: 90%;
+    left: 0;
+    padding: 1em;
+    margin: 20px auto;
+  }
+.owner-form  img{
+  height: 150px;
+}
+  .owner-border {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .owner-form h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .owner-input-icon input[type="text"],
+  .owner-input-icon input[type="password"] {
+    width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .owner-forgot-password {
+    text-align: right;
+    font-size: 0.9em;
+  }
+
+  .owner-social-media {
+    gap: 10px;
+  }
+
+  .owner-container button {
+    width: 100px;
+    font-size: 14px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .owner-image {
+    height: 400px;
+  }
+
+  .owner-text {
+    font-size: 5vw;
+    line-height: 1.3;
+  }
+
+  .owner-form {
+    width: 85%;
+    left: 0;
+    margin: 20px auto;
+  }
+
+  .owner-border {
+    padding: 30px;
+  }
+
+  .owner-form h1 {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+
+  .owner-input-icon input[type="text"],
+  .owner-input-icon input[type="password"] {
+    width: 100%;
+  }
+
+  .owner-container button {
+    width: 120px;
+    font-size: 14px;
+    height: 45px;
+  }
+}

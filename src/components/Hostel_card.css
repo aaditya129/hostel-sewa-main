@@ -1,0 +1,221 @@
+/* Container for all hostel cards */
+.hostel-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 88%;
+  margin: auto;
+}
+
+/* Styling for each individual hostel card */
+.hostel-card {
+  flex: 1 1 30%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.blur-contact {
+  filter: blur(2px);
+  user-select: none;
+  pointer-events: none;
+  color: gray;
+}
+
+
+/* Image container and styles */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.hostel-image {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.price-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #003580;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Information section */
+.hostel-info {
+  padding: 16px;
+}
+
+.hostel-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.location, .contact {
+  color: #666;
+  margin-top: 5px;
+}
+
+.rating {
+  font-size: 16px;
+  color: #FFB400;
+  margin-top: 5px;
+}
+
+.heading {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Responsive styling */
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .hostel-card {
+      flex: 1 1 45%; /* Adjust width to fit two per row */
+      max-width: 100%;
+  }
+
+  .heading {
+      font-size: 22px;
+      margin-top: 40px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .hostel-card {
+    flex: 1 1 80%; /* Adjust width to 80% for smaller cards */
+    max-width: 80%; /* Ensure it doesn't exceed 80% width */
+    height: auto; /* Let height adjust dynamically */
+    padding: 10px; /* Add padding for better spacing */
+    margin: 10px auto; /* Center the card with vertical spacing */
+    border: 1px solid #ddd; /* Subtle border for distinction */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background: #fff; /* White background for a clean look */
+  }
+
+  .image-container {
+    height: 140px; /* Reduce height for smaller screens */
+    border-radius: 8px; /* Match the card's border radius */
+    overflow: hidden; /* Clip overflowing content */
+  }
+  .hostel-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px auto;
+    justify-content: center;
+  }
+  
+  .hostel-card {
+    width: 250px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .hostel-image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .price-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff5722;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  
+  .hostel-info {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .rating {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container */
+  }
+
+  .price-badge {
+    font-size: 10px; /* Reduce font size for price badge */
+    padding: 3px 6px; /* Smaller padding */
+    background-color: #2581C4; /* Accent color for the badge */
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+  .hostel-info h3 {
+    font-size: 16px; /* Smaller font for hostel name */
+    font-weight: 600;
+    margin: 5px 0;
+  }
+
+  .location,
+  .contact {
+    font-size: 14px; /* Reduce font size for location and contact */
+    color: #555; /* Subtle text color */
+    margin: 2px 0;
+  }
+
+  .rating {
+    font-size: 12px; /* Reduce font size for rating */
+    margin-top: 5px;
+    color: #f39c12; /* Gold color for rating */
+  }
+
+  .heading {
+    font-size: 18px; /* Slightly smaller heading size */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+/* Container for horizontal scrolling on mobile screens */
+@media (max-width: 480px) {
+  .hostel-card-container {
+    display: flex;
+    flex-wrap: nowrap; /* Disable wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Spacing between cards */
+    padding: 10px;
+   /* Add padding for scrolling space */
+  }
+
+  .hostel-card {
+    flex: 0 0 auto; /* Ensure cards don't shrink and maintain size */
+    width: 250px; /* Set fixed width for cards */
+  }
+}
