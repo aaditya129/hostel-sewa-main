@@ -1,32 +1,39 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import axios from 'axios';
 import './Achievements.css';
 
 const Achievements = () => {
-  const [certificates, setCertificates] = useState([]);
+  const [certificates, setCertificates] = useState([
+    {
+      _id: '1',
+      title: 'Certificate of Excellence',
+   photo: 'https://m.media-amazon.com/images/I/71eGdf7X3rL._AC_UF894,1000_QL80_.jpg',
+    },
+    {
+      _id: '2',
+      title: 'Outstanding Performance',
+      photo: 'https://m.media-amazon.com/images/I/71eGdf7X3rL._AC_UF894,1000_QL80_.jpg',
+    },
+    {
+      _id: '3',
+      title: 'Achievement Award',
+  photo: 'https://m.media-amazon.com/images/I/71eGdf7X3rL._AC_UF894,1000_QL80_.jpg',
+    },
+    {
+      _id: '4',
+      title: 'Best Service',
+     photo: 'https://m.media-amazon.com/images/I/71eGdf7X3rL._AC_UF894,1000_QL80_.jpg',
+    },
+  ]);
+
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(null); // ✅ State for modal
+  const [selectedImage, setSelectedImage] = useState(null);
   const containerRef = useRef(null);
   const controls = useAnimation();
   const [isInView, setIsInView] = useState(false);
 
-  const slidesPerPage = 4; // Number of certificates per slide
+  const slidesPerPage = 4;
   const totalPages = Math.ceil(certificates.length / slidesPerPage);
-
-  useEffect(() => {
-    axios.get('https://hostel-sewa-node.onrender.com/api/certificates')
-      .then(response => {
-        setCertificates(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching certificates:', error);
-      });
-  }, []);
-
-  const handleDotClick = (index) => {
-    setCurrentSlide(index);
-  };
 
   const getCurrentSlideCertificates = () => {
     const start = currentSlide * slidesPerPage;
@@ -42,7 +49,7 @@ const Achievements = () => {
           controls.start('visible');
         }
       },
-      { threshold: 0.2 } 
+      { threshold: 0.2 }
     );
 
     if (containerRef.current) {
@@ -64,7 +71,7 @@ const Achievements = () => {
   const containerVariants = {
     visible: {
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -83,7 +90,7 @@ const Achievements = () => {
             className="certificate"
             key={cert._id}
             variants={cardVariants}
-            onClick={() => setSelectedImage(`https://hostel-sewa-node.onrender.com/${cert.photo}`)} // ✅ Open modal on click
+            onClick={() => setSelectedImage(cert.photo)}
           >
             <img
               src={cert.photo}
@@ -99,12 +106,11 @@ const Achievements = () => {
           <span
             key={index}
             className={`dot ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => handleDotClick(index)}
+            onClick={() => setCurrentSlide(index)}
           ></span>
         ))}
       </div>
 
-      {/* ✅ Image Modal */}
       {selectedImage && (
         <div className="image-modal" onClick={() => setSelectedImage(null)}>
           <div className="modal-content">

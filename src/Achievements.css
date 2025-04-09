@@ -1,108 +1,89 @@
 .achievements-container {
+  padding: 60px 20px;
   text-align: center;
-  margin: 40px auto;
-  margin-bottom: 30px;
-  padding: 20px;
-  background: #F8F9FA;
+  background: #f9f9f9;
 }
 
 .achievements-title {
-  font-size: 25px;
-  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 40px;
+  color: #333;
 }
 
 .certificates-container {
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
-  width: 92%;
-  margin: auto;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
 .certificate {
-  width: 280px; /* Set width */
-  height: 280px; /* Set height */
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  width: 220px;
+  height: 150px;
+  border-radius: 12px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .certificate-image {
-  width: 100%; /* Make the image fill the container width */
-  height: 100%; /* Make the image fill the container height */
-  object-fit: cover; /* Ensure the image covers the container without overflow */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
+/* Dot Navigation */
 .dots-container {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .dot {
   width: 12px;
   height: 12px;
+  background-color: #bbb;
   border-radius: 50%;
-  background-color: #ddd;
-  display: inline-block;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .dot.active {
-  background-color: #333; /* Change to your preferred active color */
+  background-color: #4a90e2;
 }
 
-/* Responsive adjustments */
-@media (max-width: 599px) {
-  .achievements-title {
-    font-size: 22px;
-  }
-
-  .certificates-container {
-    gap: 10px;
-    justify-content: center; /* Center items for smaller screens */
-  }
-
-  .certificate {
-    width: 200px; /* Adjust width for smaller screens */
-    height: 200px; /* Adjust height for smaller screens */
-  }
-
-  .dots-container {
-    display: flex;
-  }
+/* Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-@media (min-width: 600px) and (max-width: 1023px) {
-  .certificate {
-    width: 250px; /* Adjust width for medium screens */
-    height: 250px; /* Adjust height for medium screens */
-  }
-}
-
-@media (min-width: 1024px) {
-  .certificate {
-    width: 280px; /* Maintain original size for large screens */
-    height: 280px;
-  }
-}
 .modal-content {
   max-width: 90%;
-  max-height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-height: 80%;
+  overflow: auto;
 }
 
 .modal-content img {
-  width: auto;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }

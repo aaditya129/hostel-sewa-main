@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Team_card from '../NeHa/Team_card'
 import Choosing from '../Choosing'
-
 import image1 from '../Hostel Page/images/image1.png'
 import image2 from '../Hostel Page/images/hostelpage_cover.jpeg'
 import TeamGrid from '../NeHa/Team_grid'
@@ -15,7 +14,8 @@ import Testimonial from '../Testimonial'
 import Partners from '../Partners'
 import Footer from '../Footer';
 import Certificate from '../Certificate'
-
+import Contact from '../Contact/Contact.jsx'
+import Achievements from '../../Achievement.jsx';
 const images = [image1, image2, image2];
 
 const About = () => {
@@ -81,7 +81,8 @@ const About = () => {
    <Choosing/>
 
 
-   <Certificate/>
+   <Achievements/>
+   <Contact/>
    <Testimonial/>
    <div className="gap"></div>
    <Partners/>

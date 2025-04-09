@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
-import Navbar from '../Navbar';
+// import Navbar from '../Navbar';
 import student from '../Contact/image.jpeg';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-import Partners from '../Partners';
-import Footer from '../Footer';
+// import Partners from '../Partners';
+// import Footer from '../Footer';
 import './Contact.css'; // Ensure this file exists for styling
 
 const Contact = () => {
@@ -71,7 +71,8 @@ const Contact = () => {
 
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
+    
 
       <motion.div className="cover-container" initial="hidden" animate="visible" transition={{ staggerChildren: 0.3 }}>
         <img className="cover-image" src={student} alt="Student Login" />
@@ -174,9 +175,9 @@ const Contact = () => {
           </div>
         </div>
       </motion.div>
-
+{/* 
       <Partners />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };

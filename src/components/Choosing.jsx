@@ -35,6 +35,7 @@ const WhyChooseUs = () => {
   };
 
   return (
+    <div className="why-choose-us-wrapper">
     <motion.div
       ref={sectionRef}
       initial="hidden"
@@ -44,10 +45,10 @@ const WhyChooseUs = () => {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.8 }}
-      className="why-choose-us-section"
+      className="why-choose-us-left"
     >
-      <h2 className="section-heading">Why Choose Us?</h2>
-      <div className="curve-background">
+      <h2 className="section-heading">Why Choose Us ?</h2>
+      {/* <div className="curve-background">
         <svg width="100%" height="200px">
           <path
             d="M0,100 Q250,200 500,100 T1000,50 T1500,100 T2000,150"
@@ -57,40 +58,50 @@ const WhyChooseUs = () => {
             fill="none"
           />
         </svg>
-      </div>
-
+      </div> */}
+  
       <div className="box-container">
         <motion.div
           className="info-box"
           variants={boxVariants}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p>
-            ✅ 100% **Verified Hostels** with secure & reliable listings.
-          </p>
+          <p>✅ <strong>100% Verified Hostels</strong> with secure & reliable listings.</p>
         </motion.div>
-
+  
         <motion.div
           className="info-box lower-box"
           variants={boxVariants}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>
-            🚀 **Fast Booking** process with **secure payment options**.
-          </p>
+          <p>🚀 <strong>Fast Booking</strong> process with <strong>secure payment options</strong>.</p>
         </motion.div>
-
+  
         <motion.div
           className="info-box"
           variants={boxVariants}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p>
-            💡 **Affordable Pricing** and **24/7 Support** for students.
-          </p>
+          <p>💡 <strong>Affordable Pricing</strong> and <strong>24/7 Support</strong> for students.</p>
         </motion.div>
       </div>
     </motion.div>
+  
+    <div className="why-choose-us-ad">
+  <div className="ad-box">
+    <img 
+      src="https://newspaperads.ads2publish.com/wp-content/uploads/2017/12/nescafe-cofee-just-add-hot-water-ad-times-of-india-delhi-28-12-2017.png" 
+      alt="Ad Banner" height={250}
+      className="ad-image" 
+    />
+    <h3>📢 Advertisement</h3>
+    <p>Promote your hostel here!</p>
+    <button className="ad-btn">Contact Us</button>
+  </div>
+</div>
+
+  </div>
+  
   );
 };
 

@@ -141,6 +141,8 @@ useEffect(() => {
         >
           <p className="welcome-text">Our Verified Hostels</p>
 
+        
+        
           <motion.div
             className="search-section"
             initial={{ opacity: 0, y: 50 }}
