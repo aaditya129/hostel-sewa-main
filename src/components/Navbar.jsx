@@ -117,7 +117,7 @@ const Navbar = ({
           </li>
           <li onClick={neha}>
             <FaUserAlt className="icon2" />
-            NeHa
+            SOS
           </li>
           <li onClick={gallery}>
             <FaImage className="icon2" />
@@ -135,10 +135,10 @@ const Navbar = ({
             <FaInfoCircle className="icon2" />
             About Us
           </li>
-          <li onClick={contact}>
+          {/* <li onClick={contact}>
             <FaPhoneAlt className="icon2" />
             Contact Us
-          </li>
+          </li> */}
           {isLoggedIn  ? (
   <li
   onClick={() => setShowLogout(!showLogout)}

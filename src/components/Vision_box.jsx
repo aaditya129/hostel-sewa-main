@@ -47,32 +47,32 @@ const VisionSection = () => {
 
     return (
         <div className="vision-container">
-            <div
-                className="vision-cards"
-                ref={containerRef}
-                onMouseDown={handleMouseDown}
-                onMouseLeave={handleMouseLeave}
-                onMouseUp={handleMouseUp}
-                onMouseMove={handleMouseMove}
-            >
-                {/* Map dynamic cards */}
-                {visions && visions.map((item) => (
-                    <div className="card" key={item._id}>
-                        <img src={item.photo} alt={item.title} />
-                        <h3>{item.title}</h3>
-                        <p>{item.heading}</p>
-                    </div>
-                ))}
+           <div className="vision-cards"
+     ref={containerRef}
+     onMouseDown={handleMouseDown}
+     onMouseLeave={handleMouseLeave}
+     onMouseUp={handleMouseUp}
+     onMouseMove={handleMouseMove}
+>
+    {/* ✅ Our Vision - first visible */}
+    <div className="vision-text">
+        <section>Our Vision</section>
+        <p>
+            "To lead Nepal's student living ecosystem, housing 50,000 students across 20 cities through quality housing, academic support, and community values. We create holistic growth experiences that nurture future leaders."
+        </p>
+    </div>
 
-                {/* Static vision statement */}
-                <div className="vision-text">
-                    <section>Our Vision</section>
-                    <p>
-                        "To lead Nepal's student living ecosystem, housing 50,000 students across 20 cities through quality housing, academic support, and community values. We create holistic growth experiences that nurture future leaders."
-                    </p>
-                </div>
-            </div>
+    {/* ✅ Then dynamic vision cards */}
+    {visions && visions.map((item) => (
+        <div className="card" key={item._id}>
+            <img src={item.photo} alt={item.title} />
+            <h3>{item.title}</h3>
+            <p>{item.heading}</p>
         </div>
+    ))}
+</div>
+            </div>
+     
     );
 };
 
