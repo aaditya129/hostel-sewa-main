@@ -78,9 +78,9 @@ const Homepage = () => {
       </div>
 
       <Choosing />
-      <p className='heading'>All about Hostel</p>
+      {/* <p className='heading'>All about Hostel</p> */}
       <Boxes />
-      <Services_box />
+      {/* <Services_box /> */}
       <Mission_box />
       <Vision_box />
       <Achievement />
