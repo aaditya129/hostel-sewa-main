@@ -1,27 +1,22 @@
 .vision-section {
     display: flex;
-    align-items: flex-start;
-    justify-content: left;
-    width: 100%; /* Extend to full width */
-/* border: 2px solid black; */
+    align-items: flex-start; /* ✅ Align top of children */
+    justify-content: flex-start;
     gap: 40px;
-}
-
-.vision-text {
-    min-width: 300px;
-    height: 405px;
-    background: #fff;
-    border-radius: 8px 0px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    /* margin-top: 10%; */
-    margin-left: 10px;
-    font-family: Inter;
-    gap: 10px;
-    line-height: 52px;
-}
-
+    width: 100%;
+    flex-wrap: wrap; /* in case of smaller screens */
+  }
+  
+  .vision-text {
+    flex: 0 0 600px;
+    padding: 2rem;
+    background: #2581C4;
+    border-radius: 15px;
+    color: white;
+    margin: 0;
+    align-self: flex-start; /* ✅ Force align to top */
+  }
+  
 .vision-text section{
    
 font-size: 36px;

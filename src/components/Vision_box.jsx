@@ -55,12 +55,11 @@ const VisionSection = () => {
      onMouseMove={handleMouseMove}
 >
     {/* ✅ Our Vision - first visible */}
-    <div className="vision-text">
-        <section>Our Vision</section>
-        <p>
-            "To lead Nepal's student living ecosystem, housing 50,000 students across 20 cities through quality housing, academic support, and community values. We create holistic growth experiences that nurture future leaders."
-        </p>
-    </div>
+    <div className="mission-text">
+                    <section>Our Vision</section>
+                    <p>To revolutionize student living through safe spaces, modern amenities, and community-building initiatives that empower academic success and personal growth.</p>
+                </div>
+
 
     {/* ✅ Then dynamic vision cards */}
     {visions && visions.map((item) => (
