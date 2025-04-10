@@ -115,10 +115,52 @@ useEffect(() => {
     setArea('');
     setSeaterType('');
   };
+  const [showFloatingSearch, setShowFloatingSearch] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 300; // adjust as needed
+      setShowFloatingSearch(window.scrollY > scrollThreshold);
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   return (
     <>
       <Navbar />
+      {searchTerm !== '' && (
+  <div className="floating-search-bar">
+    <input
+      type="text"
+      className="floating-search-input"
+      placeholder="🔍 Search by Hostel Name..."
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />
+  </div>
+)}
+{showFloatingSearch && (
+  <motion.div
+    className="floating-search-bar"
+    initial={{ y: -50, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    exit={{ y: -50, opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
+    <input
+      type="text"
+      className="floating-search-input"
+      placeholder="🔍 Search by Hostel Name..."
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />
+  </motion.div>
+)}
+
+
+
       <motion.div
         className="cover-container"
         initial={{ opacity: 0 }}
@@ -150,33 +192,37 @@ useEffect(() => {
             transition={{ duration: 1 }}
           >
             <div className="search-container">
-              <div className="search-input-container">
-                <input
-                  type="text"
-                  placeholder="🔍 Search by Hostel Name..."
-                  className="search-input"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  onFocus={() => setShowSuggestions(true)}
-                  onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
-                />
-                {showSuggestions && suggestions.length > 0 && (
-                  <div className="suggestions-dropdown">
-                    {suggestions.map((name, index) => (
-                      <div
-                        key={index}
-                        className="suggestion-item"
-                        onMouseDown={(e) => {
-                          e.preventDefault();
-                          handleSuggestionClick(name);
-                        }}
-                      >
-                        {name}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+            <div className="sticky-search-wrapper">
+  <div className="search-input-container">
+    <input
+      type="text"
+      placeholder="🔍 Search by Hostel Name..."
+      className="search-input"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      onFocus={() => setShowSuggestions(true)}
+      onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
+    />
+    {showSuggestions && suggestions.length > 0 && (
+      <div className="suggestions-dropdown">
+        {suggestions.map((name, index) => (
+          <div
+            key={index}
+            className="suggestion-item"
+            onMouseDown={(e) => {
+              e.preventDefault();
+              handleSuggestionClick(name);
+            }}
+          >
+            {name}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</div>
+
+
 
               <select
                 className="filter-dropdown"
