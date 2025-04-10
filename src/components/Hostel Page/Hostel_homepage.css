@@ -165,6 +165,7 @@
 @media (max-width: 480px) {
   .cover-container {
     height: 300px;
+    margin-top: 80px;
   }
 
   .welcome-text {
