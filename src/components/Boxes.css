@@ -1,155 +1,87 @@
-.merged-services-wrapper {
-  background-color: #f8f9fb;
+.services-wrapper {
   padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
 }
 
-/* Section Titles */
-.section-title {
-  font-size: 32px;
+.section-title,
+.section-subtitle {
+  font-size: 28px;
   font-weight: 700;
-  color: #007bff;
-  text-align: center;
-  margin-bottom: 40px;
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: #222;
 }
 
-/* Circle Grid (from Boxes.css) */
-.big-circle {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(180deg, #2581C4 0%, #00355C 100%);
-  padding: 60px 0;
-  margin-bottom: 60px;
-}
-
-.circle-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1300px;
-}
-
-.circle-container {
-  width: 22%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.circles {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle-img {
-  width: 40%;
-  height: 40%;
-  object-fit: contain;
-}
-
-.circle-text {
-  color: white;
-  font-size: 13px;
-  font-family: "Inter", sans-serif;
-  margin-top: 8px;
-  text-align: center;
-}
-
-/* Services Cards (from Services_box.css) */
-.services-container {
+.service-categories {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  margin-bottom: 50px;
 }
 
-.outer-border {
-  background: linear-gradient(to right, #ffffff, #f8f9fa);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  padding: 25px;
-  width: 30%;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.outer-border:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.verified-card {
+.service-icon-box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 120px;
 }
 
-.image {
+.icon-circle {
+  background: linear-gradient(145deg, #007bff, #0056b3);
+  color: white;
+  font-size: 30px;
   width: 60px;
   height: 60px;
-  margin-bottom: 15px;
-  transition: transform 0.3s;
-}
-
-.outer-border:hover .image {
-  transform: scale(1.1);
-}
-
-.verified-text {
-  font-size: 20px;
-  color: #2c3e50;
-  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.description-text {
+.icon-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.feature-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.feature-card p {
   font-size: 14px;
   color: #555;
-  max-width: 90%;
-  line-height: 1.6;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .circle-container {
-    width: 45%;
-  }
-  .outer-border {
-    width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  .circle-container {
-    width: 80%;
-  }
-  .outer-border {
-    width: 80%;
-  }
-  .circle-wrapper {
-    padding: 40px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .circle-container {
-    width: 100%;
-  }
-  .outer-border {
-    width: 100%;
-  }
-  .section-title {
-    font-size: 24px;
-  }
 }

@@ -1,84 +1,51 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import circle from '../assets/circle.png';
-import box3 from '../assets/box3.png';
-import box4 from '../assets/box4.png';
-import box5 from '../assets/box5.png';
-import box6 from '../assets/box6.png';
-import box7 from '../assets/box7.png';
-import box8 from '../assets/box8.png';
-import box2 from '../assets/box2.png';
-
+import React from 'react';
 import './Boxes.css';
 
-const CircleGrid = () => {
-  const controls = useAnimation();
-  const sectionRef = useRef(null);
+const services = [
+  { icon: '📋', label: 'Registration / Renew' },
+  { icon: '🛏️', label: 'Booking System' },
+  { icon: '🎓', label: 'Training / Orientation' },
+  { icon: '🛒', label: 'Sales / Purchase' },
+  
+];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          controls.start('visible');
-        }
-      },
-      { threshold: 0.2 } // Trigger animation when 20% of the section is visible
-    );
+const features = [
+ 
+  { icon: '💰', title: 'Affordable Prices', description: 'Best deals with reasonable pricing on all services.' },
+  { icon: '📞', title: 'Customer Support', description: 'Available 24/7 to assist you.' },
+  { icon: '🔐', title: 'Secure Payments', description: 'Safe and hassle-free transactions.' },
+  { icon: '⚡', title: 'Fast Booking', description: 'Book your hostel with a few clicks.' },
+  { icon: '✔️', title: '100% Verified', description: 'All listings are quality checked.' },
+];
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [controls]);
-
-  const dropVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
+const ServicesSection = () => {
   return (
-    <motion.div
-      className="big-circle"
-      ref={sectionRef}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-      }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="circle-wrapper">
-        {[
-          { img: circle, text: 'REGISTRATION / RENEW' },
-          { img: box2, text: 'BOOKING SYSTEM' },
-          { img: box3, text: 'TRAINING / ORIENTATION' },
-          { img: box4, text: 'TRAINING / ORIENTATION' },
-          { img: box5, text: 'SOCIAL MEDIA MANAGEMENT' },
-          { img: box6, text: 'DESIGN / PRINTING' },
-          { img: box7, text: 'SALES / PURCHASE' },
-          { img: box8, text: 'HELP / SUPPORT' },
-        ].map((item, index) => (
-          <motion.div
-            className="circle-container"
-            key={index}
-            variants={dropVariants}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <div className="circles">
-              <img src={item.img} alt="circle" className="circle-img" />
-            </div>
-            <section className="circle-text">{item.text}</section>
-          </motion.div>
+    <section className="services-wrapper">
+      {/* <h2 className="section-title">All About Hostel Services</h2> */}
+          <h2 className="section-subtitle">Our Services</h2>
+
+      <div className="service-categories">
+        {services.map((s, index) => (
+          <div className="service-icon-box" key={index}>
+            <div className="icon-circle">{s.icon}</div>
+            <p className="icon-label">{s.label}</p>
+          </div>
         ))}
       </div>
-    </motion.div>
+
+  
+
+      <div className="feature-grid">
+        {features.map((f, index) => (
+          <div className="feature-card" key={index}>
+            <div className="feature-icon">{f.icon}</div>
+            <h3>{f.title}</h3>
+            <p>{f.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
-export default CircleGrid;
+export default ServicesSection;
