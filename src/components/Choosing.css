@@ -99,3 +99,64 @@
 .ad-btn:hover {
   background-color: #1e6da1;
 }
+/* ✅ Tablet & Below */
+@media (max-width: 1024px) {
+  .why-choose-us-wrapper {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .why-choose-us-left,
+  .why-choose-us-ad {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ad-box {
+    margin: auto;
+    max-width: 400px;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+  .info-box {
+    flex: 1 1 100%;
+  }
+
+  .box-container {
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .why-choose-us-wrapper {
+    padding: 20px 10px;
+  }
+
+  .ad-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+/* ✅ Small Mobile */
+@media (max-width: 480px) {
+  .info-box {
+    padding: 16px;
+  }
+
+  .ad-box h3 {
+    font-size: 18px;
+  }
+
+  .ad-box p {
+    font-size: 14px;
+  }
+
+  .ad-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

@@ -2,13 +2,7 @@
   padding: 60px 20px;
   text-align: center;
   background: #f9f9f9;
-}
-
-.achievements-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #333;
+  
 }
 
 .certificates-container {
@@ -48,6 +42,51 @@
   justify-content: center;
   gap: 10px;
 }
+/* Wrapper to center the scroll strip */
+.certificate-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Scrollable horizontal container */
+.certificate-scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Each card */
+.certificate-card {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 150px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  scroll-snap-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Image style */
+.certificate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Optional: hide scrollbar */
+.certificate-scroll-container::-webkit-scrollbar {
+  display: none;
+}
 
 .dot {
   width: 12px;
@@ -86,4 +125,76 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+.achievements-container {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.achievements-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Scrollable horizontal container for mobile */
+.certificate-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.certificate-card {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 150px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.certificate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Modal remains same */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Hide horizontal scroll bar (optional) */
+.certificate-scroll-container::-webkit-scrollbar {
+  display: none;
 }

@@ -167,7 +167,19 @@
     font-size: 22px;
     margin-bottom: 20px;
   }
-
+  .testimonial-slider {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+  
   .testimonial-review {
     font-size: 13px;
   }

@@ -77,29 +77,22 @@ const Achievements = () => {
   };
 
   return (
+    <>
+    
     <div className="achievements-container" ref={containerRef}>
-      <h2 className="achievements-title">Our Achievements</h2>
-      <motion.div
-        className="certificates-container"
-        initial="hidden"
-        animate={controls}
-        variants={containerVariants}
-      >
-        {getCurrentSlideCertificates().map((cert) => (
-          <motion.div
-            className="certificate"
-            key={cert._id}
-            variants={cardVariants}
-            onClick={() => setSelectedImage(cert.photo)}
-          >
-            <img
-              src={cert.photo}
-              alt={cert.title}
-              className="certificate-image"
-            />
-          </motion.div>
-        ))}
-      </motion.div>
+    <div className ="achievements-title ">Our Acheivements</div>
+    <div className="certificate-scroll-container">
+  {certificates.map((cert) => (
+    <div
+      key={cert._id}
+      className="certificate-card"
+      onClick={() => setSelectedImage(cert.photo)}
+    >
+      <img src={cert.photo} alt={cert.title} className="certificate-image" />
+    </div>
+  ))}
+</div>
+
 
       <div className="dots-container">
         {Array.from({ length: totalPages }).map((_, index) => (
@@ -119,6 +112,7 @@ const Achievements = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
