@@ -1,156 +1,240 @@
-/* Cover Section */
-.cover-container {
-    position: relative;
+.store-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 160px;
+  max-width: 360px;
+  background: linear-gradient(135deg, #f6f3ff 0%, #e3dbd7 100%);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.sidebar h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #3a3a3a;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  /* text-align: center; */
+}
+
+.sidebar li:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+  color: #321087;
+}
+
+/* Main */
+.main-section {
+  flex: 1;
+  
+}
+
+.trending-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+.trending-card {
+  min-width: 180px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.trending-card:hover {
+  transform: translateY(-3px);
+}
+
+.trending-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.trending-card .name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.trending-card .price {
+  font-size: 13px;
+  color: #333;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+  width: 90%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-rating {
+  font-size: 14px;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #333;
+}
+
+.heading-titles {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+/* ========== Responsive: Tablet and Smaller (max-width: 1024px) ========== */
+@media (max-width: 1024px) {
+  .store-layout {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .sidebar {
     width: 100%;
-    height: 600px;
+    max-width: none;
+    border-radius: 10px;
     margin-bottom: 20px;
   }
-  
-  .cover-image {
+
+  .main-section {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
-  
-  .overlay_cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: rgba(0, 0, 0, 0.4); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .welcome-text {
-    font-size: 36px;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  /* Product Grid */
-  .product-grid-container {
-    width: 85%;
-    margin: auto;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .heading-titles  {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    /* border: 2px solid black; */
-    /* width: 20%; */
-    text-align: center;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  
+
   .product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .product-image {
     width: 100%;
-    height: auto;
-    aspect-ratio: 4/3;
-  }
-
-  
-  .product-name {
-    font-size: 16px;
-    font-weight: 600;
-
-  }
-  
-  .product-rating {
-    font-size: 14px;
- 
-  }
-  
-  .product-price {
-    font-size: 14px;
-    color: #333;
-
-  }
-  
-  /* Tablet screens (768px and below) */
-@media (max-width: 768px) {
-  /* Cover Section */
-  .cover-container {
-    height: 400px;
-    margin-bottom: 15px;
-  }
-
-  .welcome-text {
-    font-size: 28px;
-    padding: 0 10px;
-  }
-
-  /* Product Grid */
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .heading-title p {
-    font-size: 20px;
-    width: 40%;
   }
 }
 
-/* Mobile screens (480px and below) */
-@media (max-width: 480px) {
-  /* Cover Section */
-  .cover-container {
-    height: 300px;
+/* ========== Responsive: Mobile (max-width: 768px) ========== */
+@media (max-width: 768px) {
+  .sidebar li {
+    font-size: 13px;
+    padding: 8px;
   }
 
-  .welcome-text {
-    font-size: 22px;
-    padding: 0 5px;
-    text-align: center;
+  .trending-scroll {
+    gap: 10px;
+    padding-bottom: 15px;
   }
 
-  /* Product Grid */
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .trending-card {
+    min-width: 140px;
+    padding: 8px;
   }
 
-  .heading-title h2 {
-    font-size: 16px;
-    width: 80%;
-    margin: auto;
+  .trending-card img {
+    height: 100px;
   }
 
-  .product-card {
-    border-radius: 8px;
+  .trending-card .name {
+    font-size: 13px;
   }
 
-  .product-name {
-    font-size: 14px;
-  }
-
-  .product-price {
+  .trending-card .price {
     font-size: 12px;
   }
 
- 
+  .heading-titles {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+
+  .product-name,
+  .product-rating,
+  .product-price {
+    font-size: 13px;
+  }
+}
+
+/* ========== Responsive: Small Mobile (max-width: 480px) ========== */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Stack products */
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  .trending-card {
+    min-width: 120px;
+  }
+
+  .trending-card img {
+    height: 90px;
+  }
+
+  .sidebar {
+    padding: 10px;
+    margin-top: 80px;
+  }
+
+  .sidebar h3 {
+    font-size: 15px;
+  }
+
+  .sidebar li {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
 }

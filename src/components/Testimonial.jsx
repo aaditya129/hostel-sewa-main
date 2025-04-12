@@ -42,7 +42,7 @@ const Testimonial = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % totalPages);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [totalPages]);
@@ -57,34 +57,34 @@ const Testimonial = () => {
     <div className="testimonial-section">
       <h2 className="testimonial-heading">Testimonial and Review</h2>
       <div className="testimonial-container">
-        <AnimatePresence mode="wait">
-          <motion.div
-            className="testimonial-box"
-            key={currentSlide} // Key ensures the box re-renders with animation
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={slideVariants}
-            transition={{ duration: 0.6 }}
-          >
-            <img
-              src={testimonialsData[currentSlide].image}
-              alt={testimonialsData[currentSlide].name}
-              className="testimonial-image"
-            />
-            <div className="testimonial-content">
-              <div className="name-rating">
-                <span className="testimonial-name">{testimonialsData[currentSlide].name}</span>
-                <span className="rating">
-                  {'⭐'.repeat(testimonialsData[currentSlide].rating)}
-                </span>
-              </div>
-              <p className="testimonial-review">
-                "{testimonialsData[currentSlide].review}"
-              </p>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+      <div className="testimonial-slider">
+  {testimonialsData.map((testimonial, index) => {
+    let position = 'nextSlide';
+    if (index === currentSlide) {
+      position = 'activeSlide';
+    } else if (
+      index === currentSlide - 1 ||
+      (currentSlide === 0 && index === testimonialsData.length - 1)
+    ) {
+      position = 'lastSlide';
+    }
+
+    return (
+      <div className={`testimonial-box stacked-slide ${position}`} key={index}>
+        <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
+        <div className="testimonial-content">
+          <div className="name-rating">
+            <span className="testimonial-name">{testimonial.name}</span>
+            <span className="rating">{'⭐'.repeat(testimonial.rating)}</span>
+          </div>
+          <p className="testimonial-review">"{testimonial.review}"</p>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+       
       </div>
       <div className="dots-container">
         {Array.from({ length: totalPages }).map((_, index) => (

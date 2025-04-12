@@ -1,162 +1,77 @@
-/* AboutSection.css */
-.about-section {
-    /* border: 2px solid #ccc; */
-    /* padding: 20px; */
-    /* max-width: 800px; */
-    margin-top: 50px;
-    width: 80%;
-    /* margin: 0 auto; */
-margin-left: 150px;
-    text-align: justify;
-  }
-  
-  .about-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    /* margin-bottom: 10px; */
-    display: inline-block;
-   
-  }
-
-  .heading_neha{
-    text-align: center;
-    padding: 30px;
-  }
- 
-  
-  .about-description {
-    margin-top: 20px;
-    line-height: 1.6;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-
-  /* TeamSection.css */
-.team-section {
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
-  }
-  
-  .team-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .team-description {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    color: #555;
-  }
-  
-  .team-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .team-tab {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #2581C4;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .team-tab.active {
-    background-color: #2581C4;
-    color: #fff;
-  }
-  
-  .team-content {
-    font-size: 1rem;
-    color: #333;
-    margin-top: 20px;
-  }
-
-  .text-box{
-    margin-top : 80px;
-    margin-left: 130px;
-   
-    width: 80%;
-  
-
-  }
-  /* Tablet Screens (768px and below) */
-@media (max-width: 768px) {
-  .about-section {
-    width: 100%;
-    margin-left: 0;
-    padding: 0 20px;
-    text-align: left;
-  }
-
-  .about-title {
-    font-size: 1.5rem;
-  }
-
-  .heading_neha {
-    padding: 20px;
-    font-size: 1.6rem;
-  }
-
-  .text-box {
-    width: 90%;
-    margin-left: 5%;
-  }
-
-  .team-section {
-    max-width: 90%;
-    padding: 0 20px;
-  }
-
- 
+.sos-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin-top: 20px;
 }
 
-/* Mobile Screens (480px and below) */
+.sos-background img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.sos-content {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.sos-content h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #444;
+}
+
+.sos-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.sos-table th, .sos-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.sos-table th {
+  background-color: #f3f3f3;
+  font-weight: 600;
+}
+
 @media (max-width: 480px) {
-  .about-section {
-    width: 90%;
-    margin: auto;
-    text-align: justify;
-    /* margin-left: 0; */
-    padding: 0 10px;
+  .sos-wrapper{
+    margin-top: 100px;
+  }
+  .sos-content {
+    padding: 30px 15px;
   }
 
-  .about-title {
-    font-size: 1.4rem;
-    margin-top: 20px;
+  .sos-content h1 {
+    font-size: 22px;
   }
 
-  .heading_neha {
-    padding: 15px;
-    font-size: 1.4rem;
-  }
-
-  .team-section {
-    width: 100%;
-    margin: 20px auto;
-    padding: 0 10px;
-  }
-
-  .team-title {
-    font-size: 1.5rem;
-  }
-
-
-  .text-box {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
-  }
-
-  .slider-container{
-    height: 300px;
+  .sos-table th, .sos-table td {
+    font-size: 14px;
   }
 }

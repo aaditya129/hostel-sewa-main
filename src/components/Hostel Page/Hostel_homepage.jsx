@@ -156,6 +156,66 @@ useEffect(() => {
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
     />
+     <select
+      className="floating-dropdown"
+      value={district}
+      onChange={(e) => setDistrict(e.target.value)}
+    >
+      <option value="">🏙️ District</option>
+      <option value="Kathmandu">Kathmandu</option>
+      <option value="Lalitpur">Lalitpur</option>
+      <option value="Bhaktapur">Bhaktapur</option>
+    </select>
+    <select
+      className="floating-dropdown"
+      value={area}
+      onChange={(e) => setArea(e.target.value)}
+    >
+      <option value="">📍 Area</option>
+      <option value="Thamel">Thamel</option>
+      <option value="Boudha">Boudha</option>
+      <option value="Patan">Patan</option>
+      <option value="Koteshwor">Koteshwor</option>
+      <option value="Gongabu">Gongabu</option>
+    </select>
+    <select
+      className="floating-dropdown"
+      value={hostelType}
+      onChange={(e) => setHostelType(e.target.value)}
+    >
+      <option value="">🏠 Type</option>
+      <option value="Boys">Boys</option>
+      <option value="Girls">Girls</option>
+      <option value="Co-ed">Co-ed</option>
+    </select>
+    <select
+      className="floating-dropdown"
+      value={hostelType}
+      onChange={(e) => setHostelType(e.target.value)}
+    >
+      <option value="">🏠 Type</option>
+      <option value="Boys">Boys</option>
+      <option value="Girls">Girls</option>
+      <option value="Co-ed">Co-ed</option>
+    </select>
+    <select
+      className="floating-dropdown"
+      value={seaterType}
+      onChange={(e) => setSeaterType(e.target.value)}
+    >
+      <option value="">🛏️ Seater</option>
+      <option value="Single">Single</option>
+      <option value="Double">Double</option>
+      <option value="Triple">Triple</option>
+      <option value="Dormitory">Dormitory</option>
+    </select>
+    <button
+      className="floating-reset"
+      onClick={resetFilters}
+    >
+      🔄
+    </button>
+  
   </motion.div>
 )}
 
