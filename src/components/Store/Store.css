@@ -4,7 +4,11 @@
   padding: 20px;
   background-color: #f7f7f7;
 }
-
+.stores{
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 30px;
+}
 .sidebar {
   flex-shrink: 0;
   width: 160px;
@@ -15,6 +19,51 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
   color: #333;
+  position: sticky;
+  position: sticky;
+  top: 80px; /* Adjust according to your navbar height */
+  height: fit-content;
+}
+/* Make sidebar sticky */
+.sidebar {
+  position: sticky;
+  top: 80px; /* Adjust as needed */
+  height: fit-content;
+  z-index: 100;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: static; /* Disable sticky in mobile/tablet */
+    top: unset;
+  }
+}
+
+
+/* Filter Dropdown inside Sidebar */
+.filter-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+/* Add spacing between filter and categories */
+
+.sort-dropdown {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  background-color: white;
+  cursor: pointer;
+  width: 100%;
 }
 
 .sidebar h3 {

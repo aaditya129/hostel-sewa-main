@@ -43,24 +43,53 @@ const Store = () => {
   return (
     <>
       <Navbar />
+     
       <div className="store-layout">
         {/* Sidebar */}
+        
         <aside className="sidebar">
-          <h3>Categories</h3>
-          <ul>
-            <li onClick={() => setCategory('all')}>📦 All</li>
-            <li onClick={() => setCategory('Furniture')}>🛏️ Furniture</li>
-            <li onClick={() => setCategory('Electronics')}>🔌 Electronics</li>
-            <li onClick={() => setCategory('Bathroom Essentials')}>🚿 Bathroom</li>
-            <li onClick={() => setCategory('Laundry')}>🧺 Laundry</li>
-            <li onClick={() => setCategory('Kitchen Essentials')}>🍳 Kitchen</li>
-            <li onClick={() => setCategory('Decor')}>🕰️ Decor</li>
-          </ul>
-        </aside>
+        <h1 className='stores'>Our Store</h1>
+  {/* Sticky Filter Dropdown */}
+  <div className="filter-top-bar">
+    <span className="filter-label">Add Filter</span>
+    <select
+      className="sort-dropdown"
+      onChange={(e) => {
+        const value = e.target.value;
+        const sorted = [...filteredProducts];
+        if (value === 'lowToHigh') {
+          sorted.sort((a, b) => a.price - b.price);
+        } else if (value === 'highToLow') {
+          sorted.sort((a, b) => b.price - a.price);
+        } else if (value === 'recent') {
+          sorted.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        }
+        setFilteredProducts(sorted);
+      }}
+    >
+      <option value="highToLow">High to Low (₹)</option>
+      <option value="lowToHigh">Low to High (₹)</option>
+      <option value="recent">Recent</option>
+    </select>
+  </div>
+
+  <h3>Categories</h3>
+  <ul>
+    <li onClick={() => setCategory('all')}>📦 All</li>
+    <li onClick={() => setCategory('Furniture')}>🛏️ Furniture</li>
+    <li onClick={() => setCategory('Electronics')}>🔌 Electronics</li>
+    <li onClick={() => setCategory('Bathroom Essentials')}>🚿 Bathroom</li>
+    <li onClick={() => setCategory('Laundry')}>🧺 Laundry</li>
+    <li onClick={() => setCategory('Kitchen Essentials')}>🍳 Kitchen</li>
+    <li onClick={() => setCategory('Decor')}>🕰️ Decor</li>
+  </ul>
+</aside>
 
         {/* Main Section */}
         <div className="main-section">
           <h2>Trending</h2>
+ 
+
           <div className="trending-scroll">
             {filteredProducts.slice(0, 16).map((product) => (
               <div

@@ -168,7 +168,7 @@ const OverviewSection = ({book,hostel ,  onBookNow}) => {
       <iframe
         title="Location Map"
         src={hostel.mapUrl}
-        width="800"
+        width="300"
         height="400"
         style={{ border: 0 }}
         allowFullScreen=""
@@ -231,6 +231,21 @@ const OverviewSection = ({book,hostel ,  onBookNow}) => {
     <p>Loading ad...</p>
   )}
 </div>
+<div className="video-section">
+  <h2 className="video-title">📽️ Hostel Video Tour</h2>
+  <div className="video-wrapper">
+    <iframe
+      width="100%"
+      height="400"
+      src="https://www.youtube.com/embed/8YOkEvUOLoU"
+      title="Hostel Video Tour"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
+
 
       </div>
        
@@ -243,6 +258,7 @@ const OverviewSection = ({book,hostel ,  onBookNow}) => {
 
       </div>
       </div>
+      
       </div>
 
 

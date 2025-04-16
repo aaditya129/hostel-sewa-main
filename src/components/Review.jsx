@@ -42,7 +42,7 @@ const RegisterHostel = () => {
 
           <div className="register-buttons-wrapper">
             <motion.button
-              onClick={() => navigate('/register/owner')} // ✅ Navigate on click
+              onClick={() => navigate('/form/staff')} // ✅ Navigate on click
               className="register-button"
               animate={controls}
             >
