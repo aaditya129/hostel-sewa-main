@@ -111,6 +111,7 @@ const StaffWantedForm = () => {
             <select>
               <option>Male</option>
               <option>Female</option>
+              <option>Both</option>
               <option>Other</option>
             </select>
           </div>

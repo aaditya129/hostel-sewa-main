@@ -1,0 +1,55 @@
+/* Ensure position and scale work on all screen sizes */
+.chat-widget-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  
+  /* No media queries needed to hide anything */
+  
+  
+  /* Main chat button */
+  .chat-main-button {
+    background-color: #007bff;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 3;
+  }
+  
+  /* Chat icons */
+  .chat-icon {
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 35px;
+    right: 30px;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  
+  .chat-icon.whatsapp {
+    color: #25d366;
+  }
+  
+  .chat-icon.messenger {
+    color: #0084ff;
+  }
+ 

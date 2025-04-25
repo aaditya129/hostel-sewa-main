@@ -46,7 +46,7 @@ import ScrollToTop from './components/Navigate/Sroll_top.jsx'
 import AdminDashboard from './AdminDashboard.jsx'
 import UserBookings from './pages/UserBookings.jsx'
 import Form from './pages/Form.jsx'
-
+import ChatWidget from './components/ChatWidget.jsx';
 
 const App = (props) => {
   return (
@@ -55,7 +55,7 @@ const App = (props) => {
     <BrowserRouter>
     <ScrollToTop />
     <Routes>
-    
+   
     <Route path="/" element={<Homepage />} />
     <Route path="/hostel" element={<Hostel_homepage />} />
     {/* <Route path="/hostel_details" element={<Hostel_individual />} /> */}
@@ -79,6 +79,7 @@ const App = (props) => {
     <Route path="/form/recommend" element={<Recommend />} />
     <Route path="/location" element={<Location_hostel />} />
     <Route path="/admin" element={<AdminDashboard />} />
+    <Route path="/chat" element={<ChatWidget />} />
 
     <Route path="/hostels" element={<Hostel_card />} />
     
@@ -91,7 +92,7 @@ const App = (props) => {
     </Routes>
     </BrowserRouter>
  
-   
+    <ChatWidget />
 
    </> 
     
