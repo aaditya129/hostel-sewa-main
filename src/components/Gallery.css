@@ -1,18 +1,7 @@
 *{
     font-family: "Inter", sans-serif;
 }
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-height: 500px;
-   
-    max-width: 1000px;
-    margin: 0 auto;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-    /* border: 2px solid black; */
-  }
+
   .gallery-head{
     text-align: center;
     margin: 30px;
@@ -20,28 +9,38 @@
     font-family: "Inter", sans-serif;
 
   }
-  /* Mobile view */
-  /* ✅ Mobile view */
-.carousel-image {
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 300px; /* ⬅️ reduced from 500px */
-    object-fit: cover;
+    max-width: 1000px;
+    margin: 0 auto;
     border-radius: 10px;
-   
+    background-color: #f0f0f0;
+    max-height: 500px;
   }
   
-  /* Desktop view: grid layout */
-  @media screen and (min-width: 768px) {
+  /* Mobile */
+  .carousel-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 1s ease-in-out; /* ✅ smooth transition */
+  }
+
+/* Desktop Grid Layout */
+@media screen and (min-width: 768px) {
     .carousel-container {
       display: grid;
       grid-template-areas:
-        "main main side1"
-        "main main side2";
+        "main main right1"
+        "main main right2"
+        "bottom1 bottom2 bottom3";
       grid-template-columns: 2fr 2fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 0.8fr;
       gap: 10px;
       height: auto;
-      overflow: visible;
     }
   
     .carousel-image {
@@ -50,15 +49,18 @@
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
-      display: block !important;
+      transition: all 1s ease-in-out; /* ✅ animation */
     }
   
     .image-0 { grid-area: main; }
-    .image-1 { grid-area: side1; }
-    .image-2 { grid-area: side2; }
+    .image-1 { grid-area: right1; }
+    .image-2 { grid-area: right2; }
+    .image-3 { grid-area: bottom1; }
+    .image-4 { grid-area: bottom2; }
+    .image-5 { grid-area: bottom3; }
   
-    /* Optional: hide rest of the images if more than 3 */
-    .image-3, .image-4, .image-5, .image-6 {
+    /* hide extras if more */
+    .image-6, .image-7, .image-8 {
       display: none;
     }
   }
