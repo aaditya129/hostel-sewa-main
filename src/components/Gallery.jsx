@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import './Gallery.css';
 import axios from 'axios';
 
@@ -7,12 +6,11 @@ const PhotoGallery = () => {
   const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fetch all gallery images from backend
   useEffect(() => {
     const fetchImages = async () => {
       try {
         const res = await axios.get('https://hostel-sewa-node.onrender.com/api/event-gallery/all-images');
-        const urls = res.data.map(img => img.url); // extract image URLs
+        const urls = res.data.map(img => img.url);
         setImages(urls);
       } catch (err) {
         console.error('Error fetching gallery images:', err);
@@ -22,42 +20,35 @@ const PhotoGallery = () => {
     fetchImages();
   }, []);
 
-  // Image change interval
   useEffect(() => {
     if (images.length === 0) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 sec
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images]);
 
-  const variants = {
-    enter: { x: "100%", opacity: 0 },
-    center: { x: 0, opacity: 1 },
-    exit: { x: "-100%", opacity: 0 },
-  };
-
   return (
     <>
-      <h1 className='gallery-head'>Photo Gallery</h1>
+      <h1 className="gallery-head">Photo Gallery</h1>
       <div className="carousel-container">
-        <AnimatePresence initial={false}>
-          {images.length > 0 && (
-            <motion.img
-              key={currentIndex}
-              src={images[currentIndex]}
-              alt={`Slide ${currentIndex}`}
-              className="carousel-image"
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.8 }}
+        {/* ✅ Mobile view: Show only one image (carousel logic) */}
+        {images.length > 0 &&
+          images.map((url, index) => (
+            <img
+              key={index}
+              src={url}
+              alt={`Gallery ${index}`}
+              className={`carousel-image image-${index}`}
+              style={{
+                display: window.innerWidth < 768
+                  ? index === currentIndex ? 'block' : 'none'
+                  : 'block'
+              }}
             />
-          )}
-        </AnimatePresence>
+          ))}
       </div>
     </>
   );

@@ -114,6 +114,7 @@
     align-items: flex-start;
     gap: 10px;
     max-width: 500px;
+    font-family: "Inter", sans-serif;
 }
 
 @media (max-width: 480px) {

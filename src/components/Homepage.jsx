@@ -19,6 +19,7 @@ import Vision_box from './Vision_box.jsx';
 import Boxes from './Boxes.jsx';
 import './Homepage.css';
 import Footer from './Footer';
+import Nearby_hostel from './Hostel Page/Nearby_hostel.jsx'
 
 const Homepage = () => {
   const [hostels, setHostels] = useState([]);
@@ -86,6 +87,7 @@ const Homepage = () => {
       <Achievement />
       <Gallery />
       <Review />
+      <Nearby_hostel/>
       <Testimonial />
       <FAQ />
       <Post />

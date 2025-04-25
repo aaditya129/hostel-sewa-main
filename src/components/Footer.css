@@ -8,7 +8,7 @@
     align-items: center; /* Align items vertically */
     margin-bottom: 20px; 
     margin-left: 80px;/* Space between footer sections */
-    font-family: Inter;
+    font-family: "Inter", sans-serif;
 font-size: 16px;
 }
 .footer_one img{
@@ -39,7 +39,7 @@ font-size: 16px;
    
     margin-bottom: 80px;
     text-align: center; /* Center text */
-    font-family: Inter;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
 
 
