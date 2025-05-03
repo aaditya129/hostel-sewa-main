@@ -109,102 +109,104 @@ const WelcomeSection = () => {
           "Your Second Home – Premium Services for Students at Hostelsewa Nepal"
         </motion.p>
 
-        <motion.div
-          className="coverSectionInputField"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          
-          <div className="coverSectionSearchBar">
-            <div className="search-input-container">
-              <input
-                type="text"
-                placeholder="Hostel Name"
-                className="coverSectionSearchInput"
-                value={filters.searchTerm}
-                onChange={(e) => handleFilterChange('searchTerm', e.target.value)}
-                onFocus={() => setShowSuggestions(true)}
-                onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
-              />
-              {showSuggestions && suggestions.length > 0 && (
-                <div className="suggestions-dropdown">
-                  {suggestions.map((name, index) => (
-                    <div
-                      key={index}
-                      className="suggestion-item"
-                      onMouseDown={(e) => {
-                        e.preventDefault();
-                        handleSuggestionClick(name);
-                      }}
-                    >
-                      {name}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            <select 
-              className="coverSectionQualityDropdown"
-              value={filters.seaterType}
-              onChange={(e) => handleFilterChange('seaterType', e.target.value)}
-            >
-              <option value="">Seater Type</option>
-              <option value="Single">Single</option>
-              <option value="Double">Double</option>
-              <option value="Triple">Triple</option>
-              <option value="Dormitory">Dormitory</option>
-            </select>
-            
-            <button 
-              className="coverSectionSearchButton"
-              onClick={handleSearch}
-            >
-              Search Hostel
-            </button>
+        <div className="coverSectionFormWrapper">
+  <motion.div
+    className="coverSectionInputField"
+    initial={{ scale: 0.9, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 0.8, delay: 0.6 }}
+  >
+    <div className="coverSectionSearchBar">
+      <div className="search-input-container">
+        <input
+          type="text"
+          placeholder="Hostel Name"
+          className="coverSectionSearchInput"
+          value={filters.searchTerm}
+          onChange={(e) => handleFilterChange('searchTerm', e.target.value)}
+          onFocus={() => setShowSuggestions(true)}
+          onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
+        />
+        {showSuggestions && suggestions.length > 0 && (
+          <div className="suggestions-dropdown">
+            {suggestions.map((name, index) => (
+              <div
+                key={index}
+                className="suggestion-item"
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  handleSuggestionClick(name);
+                }}
+              >
+                {name}
+              </div>
+            ))}
           </div>
-        </motion.div>
+        )}
+      </div>
 
-        <motion.div
-          className="coverSectionFilterBar"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <select 
-            className="coverSectionFilterDropdown"
-            value={filters.district}
-            onChange={(e) => handleFilterChange('district', e.target.value)}
-          >
-            <option value="">District</option>
-            <option value="Kathmandu">Kathmandu</option>
-            <option value="Lalitpur">Lalitpur</option>
-            <option value="Bhaktapur">Bhaktapur</option>
-          </select>
-          
-          <select 
-            className="coverSectionFilterDropdown"
-            value={filters.area}
-            onChange={(e) => handleFilterChange('area', e.target.value)}
-          >
-            <option value="">Area</option>
-            <option value="Thamel">Thamel</option>
-            <option value="Baneshwor">Baneshwor</option>
-            <option value="Patan">Patan</option>
-          </select>
-          
-          <select 
-            className="coverSectionFilterDropdown"
-            value={filters.hostelType}
-            onChange={(e) => handleFilterChange('hostelType', e.target.value)}
-          >
-            <option value="">Hostel Type</option>
-            <option value="Boys">Boys Hostel</option>
-            <option value="Girls">Girls Hostel</option>
-            <option value="Co-ed">Co-ed Hostel</option>
-          </select>
-        </motion.div>
+      <select
+        className="coverSectionQualityDropdown"
+        value={filters.seaterType}
+        onChange={(e) => handleFilterChange('seaterType', e.target.value)}
+      >
+        <option value="">Seater Type</option>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+        <option value="Triple">Triple</option>
+        <option value="Dormitory">Dormitory</option>
+      </select>
+
+      <button
+        className="coverSectionSearchButton"
+        onClick={handleSearch}
+      >
+        Search Hostel
+      </button>
+    </div>
+  </motion.div>
+
+  <motion.div
+    className="coverSectionFilterBar"
+    initial={{ y: 50, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, delay: 0.8 }}
+  >
+    <select
+      className="coverSectionFilterDropdown"
+      value={filters.district}
+      onChange={(e) => handleFilterChange('district', e.target.value)}
+    >
+      <option value="">District</option>
+      <option value="Kathmandu">Kathmandu</option>
+      <option value="Lalitpur">Lalitpur</option>
+      <option value="Bhaktapur">Bhaktapur</option>
+    </select>
+
+    <select
+      className="coverSectionFilterDropdown"
+      value={filters.area}
+      onChange={(e) => handleFilterChange('area', e.target.value)}
+    >
+      <option value="">Area</option>
+      <option value="Thamel">Thamel</option>
+      <option value="Baneshwor">Baneshwor</option>
+      <option value="Patan">Patan</option>
+    </select>
+
+    <select
+      className="coverSectionFilterDropdown"
+      value={filters.hostelType}
+      onChange={(e) => handleFilterChange('hostelType', e.target.value)}
+    >
+      <option value="">Hostel Type</option>
+      <option value="Boys">Boys Hostel</option>
+      <option value="Girls">Girls Hostel</option>
+      <option value="Co-ed">Co-ed Hostel</option>
+    </select>
+  </motion.div>
+</div>
+
       </div>
     </div>
   );
