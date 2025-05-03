@@ -163,23 +163,7 @@ const OverviewSection = ({book,hostel ,  onBookNow}) => {
           </table>
         </div>
       </div>
-      <div className="location-map-container">  
-      <h2 className="map-title"> Location</h2>
-      <iframe
-        title="Location Map"
-        src={hostel.mapUrl}
-        width="300"
-        height="400"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-      ></iframe>
-
-  <div className="gap"></div>
-{/* <Testimonial/> */}
-
-    </div>
-   
+      <Gallery/>
         </div>
 
         
@@ -245,10 +229,26 @@ const OverviewSection = ({book,hostel ,  onBookNow}) => {
     ></iframe>
   </div>
 </div>
+<div className="location-map-container">  
+      <h2 className="map-title"> Location</h2>
+      <iframe
+        title="Location Map"
+        src={hostel.mapUrl}
+        width="300"
+        height="400"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+      ></iframe>
 
+  <div className="gap"></div>
+{/* <Testimonial/> */}
+
+    </div>
+   
 
       </div>
-       
+     
 
 
 {/* Hostel Information Card Below Search Hostels */}
@@ -271,7 +271,7 @@ const OverviewSection = ({book,hostel ,  onBookNow}) => {
       
    
    
-
+     
     <Partners/>
     <Footer/>
 

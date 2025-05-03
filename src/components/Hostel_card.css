@@ -6,6 +6,42 @@
   width: 88%;
   margin: auto;
 }
+.see-more-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #2581C4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.see-more-button,
+.see-less-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px;
+    background-color: #2581C4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.see-more-button:hover,
+.see-less-button:hover {
+    background-color: #1e6da1;
+}
+
+.see-more-button:hover,
+.see-less-button:hover {
+    background-color: #1e6da1;
+}
+
+.see-more-button:hover {
+  background-color: #1e6da1;
+}
 
 /* Styling for each individual hostel card */
 .hostel-card {

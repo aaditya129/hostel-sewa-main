@@ -11,6 +11,7 @@ const Store = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [category, setCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -27,7 +28,7 @@ const Store = () => {
 
   useEffect(() => {
     handleFilterChange();
-  }, [category]);
+  }, [category, searchTerm]);
 
   const handleProductClick = (id) => {
     navigate(`/product/${id}`);
@@ -35,75 +36,66 @@ const Store = () => {
 
   const handleFilterChange = () => {
     const filtered = products.filter((product) => {
-      return category === 'all' || product.category === category;
+      const matchesCategory = category === 'all' || product.category === category;
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesCategory && matchesSearch;
     });
     setFilteredProducts(filtered);
+  };
+
+  const handleSortChange = (value) => {
+    const sorted = [...filteredProducts];
+    if (value === 'lowToHigh') {
+      sorted.sort((a, b) => a.price - b.price);
+    } else if (value === 'highToLow') {
+      sorted.sort((a, b) => b.price - a.price);
+    } else if (value === 'recent') {
+      sorted.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    }
+    setFilteredProducts(sorted);
   };
 
   return (
     <>
       <Navbar />
-     
       <div className="store-layout">
-        {/* Sidebar */}
-        
-        <aside className="sidebar">
-        <h1 className='stores'>Our Store</h1>
-  {/* Sticky Filter Dropdown */}
-  <div className="filter-top-bar">
-    <span className="filter-label">Add Filter</span>
-    <select
-      className="sort-dropdown"
-      onChange={(e) => {
-        const value = e.target.value;
-        const sorted = [...filteredProducts];
-        if (value === 'lowToHigh') {
-          sorted.sort((a, b) => a.price - b.price);
-        } else if (value === 'highToLow') {
-          sorted.sort((a, b) => b.price - a.price);
-        } else if (value === 'recent') {
-          sorted.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        }
-        setFilteredProducts(sorted);
-      }}
-    >
-      <option value="highToLow">High to Low (₹)</option>
-      <option value="lowToHigh">Low to High (₹)</option>
-      <option value="recent">Recent</option>
-    </select>
-  </div>
+        {/* Top bar with categories + filter */}
+        <div className="top-bar">
+          <div className="category-tabs">
+            <span className={`tab ${category === 'all' ? 'active' : ''}`} onClick={() => setCategory('all')}>📦 All</span>
+            <span className={`tab ${category === 'Furniture' ? 'active' : ''}`} onClick={() => setCategory('Furniture')}>🛏️ Furniture</span>
+            <span className={`tab ${category === 'Electronics' ? 'active' : ''}`} onClick={() => setCategory('Electronics')}>🔌 Electronics</span>
+            <span className={`tab ${category === 'Bathroom Essentials' ? 'active' : ''}`} onClick={() => setCategory('Bathroom Essentials')}>🚿 Bathroom</span>
+            <span className={`tab ${category === 'Laundry' ? 'active' : ''}`} onClick={() => setCategory('Laundry')}>🧺 Laundry</span>
+            <span className={`tab ${category === 'Kitchen Essentials' ? 'active' : ''}`} onClick={() => setCategory('Kitchen Essentials')}>🍳 Kitchen</span>
+            <span className={`tab ${category === 'Decor' ? 'active' : ''}`} onClick={() => setCategory('Decor')}>🕰️ Decor</span>
+          </div>
 
-  <h3>Categories</h3>
-  <ul>
-    <li onClick={() => setCategory('all')}>📦 All</li>
-    <li onClick={() => setCategory('Furniture')}>🛏️ Furniture</li>
-    <li onClick={() => setCategory('Electronics')}>🔌 Electronics</li>
-    <li onClick={() => setCategory('Bathroom Essentials')}>🚿 Bathroom</li>
-    <li onClick={() => setCategory('Laundry')}>🧺 Laundry</li>
-    <li onClick={() => setCategory('Kitchen Essentials')}>🍳 Kitchen</li>
-    <li onClick={() => setCategory('Decor')}>🕰️ Decor</li>
-  </ul>
-</aside>
+          <div className="filter-section">
+            <select
+              className="sort-dropdown"
+              onChange={(e) => handleSortChange(e.target.value)}
+            >
+              <option value="highToLow">High to Low (₹)</option>
+              <option value="lowToHigh">Low to High (₹)</option>
+              <option value="recent">Recent</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Search Bar */}
+        <div className="search-bar-wrapper">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-input"
+          />
+        </div>
 
         {/* Main Section */}
         <div className="main-section">
-          <h2>Trending</h2>
- 
-
-          <div className="trending-scroll">
-            {filteredProducts.slice(0, 16).map((product) => (
-              <div
-                key={product._id}
-                className="trending-card"
-                onClick={() => handleProductClick(product._id)}
-              >
-                <img src={product.photo} alt={product.name} />
-                <p className="name">{product.name}</p>
-                <p className="price">₹ {product.price}</p>
-              </div>
-            ))}
-          </div>
-
           <h2 className="heading-titles">Available Products</h2>
           <div className="product-grid">
             {filteredProducts.map((product) => (

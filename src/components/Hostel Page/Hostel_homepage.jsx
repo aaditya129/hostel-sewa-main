@@ -8,6 +8,8 @@ import Navbar from '../Navbar';
 import Partners from '../Partners';
 import Footer from '../Footer';
 import student from '../Hostel Page/images/hostelpage_cover.jpeg';
+import Nearby_hostel from './Nearby_hostel.jsx'
+   
 
 const Hostel_homepage = () => {
   const location = useLocation();
@@ -178,16 +180,7 @@ useEffect(() => {
       <option value="Koteshwor">Koteshwor</option>
       <option value="Gongabu">Gongabu</option>
     </select>
-    <select
-      className="floating-dropdown"
-      value={hostelType}
-      onChange={(e) => setHostelType(e.target.value)}
-    >
-      <option value="">🏠 Type</option>
-      <option value="Boys">Boys</option>
-      <option value="Girls">Girls</option>
-      <option value="Co-ed">Co-ed</option>
-    </select>
+
     <select
       className="floating-dropdown"
       value={hostelType}
@@ -351,6 +344,7 @@ useEffect(() => {
       )}
 
       <div className="gap"></div>
+      <Nearby_hostel/>
       <Partners />
       <Footer />
     </>

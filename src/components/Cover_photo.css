@@ -1,9 +1,7 @@
-/* Cover Section Styles */
 
-* {
-  font-family: "Inter", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
-}
+
 .coverSectionContainer {
 
   position: relative;
@@ -61,8 +59,9 @@
 
 .coverSectionSubtitle {
   font-size: 34px;
-  font-family: "Cedarville Cursive", serif;
-  font-weight: 550;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  font-style: normal;
   color: #ddd;
   margin-bottom: 20px;
   max-width: 80%;
@@ -76,7 +75,7 @@
 .coverSectionSearchBar {
   display: flex;
   align-items: center;
-  width: 140vh;
+  width: 139vh;
   gap: 5px;
   margin-bottom: 20px;
 }
@@ -241,11 +240,11 @@
 
 @media (max-width: 480px) {
   .coverSectionContainer {
-    height: 70vh;
+    height: 60vh;
   }
 
   .coverSectionOverlay {
-    height: 105vh;
+    height: 90vh;
     padding: 10px;
   }
 
@@ -265,6 +264,7 @@
 
   .coverSectionSearchBar {
     gap: 6px;
+    
   }
 
   .coverSectionSearchInput,
@@ -272,6 +272,7 @@
   .coverSectionSearchButton {
     font-size: 0.8rem;
     padding: 6px;
+        justify-content: center;
   }
 
   .coverSectionFilterBar {

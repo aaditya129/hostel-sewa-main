@@ -564,14 +564,14 @@
     /* max-width: 800px; */
     padding: 1.5rem;
     float: left;
-    width: 58%;
+    width: 98%;
     /* border: 2px solid black; */
-    margin-left: 60px;
+    /* margin-left: 60px; */
     
   }
   
   .map-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 1rem;

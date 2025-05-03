@@ -115,6 +115,7 @@ const WelcomeSection = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
+          
           <div className="coverSectionSearchBar">
             <div className="search-input-container">
               <input
