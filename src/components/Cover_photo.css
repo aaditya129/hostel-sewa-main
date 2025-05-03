@@ -356,6 +356,7 @@
 
   .coverSectionOverlay {
     padding: 15px;
+    height: 100vh;
   }
 
   .coverSectionWelcomeText {
@@ -378,7 +379,9 @@
     gap: 8px;
     justify-content: center;
   }
-
+  .coverSectionFormWrapper{
+    height: 220px;
+  }
   /* ✅ Make inputs/buttons same size */
   .coverSectionSearchInput,
   .coverSectionQualityDropdown,
@@ -387,6 +390,7 @@
     min-width: 30%;
     font-size: 0.84rem;
     padding: 8px;
+    margin-top: 0px;
   }
 
   /* 🔥 Last 3 dropdowns in a single row */
@@ -396,7 +400,7 @@
     justify-content: center;
     gap: 3px;
     width: 100%;
-    /* margin-top: 10px; */
+    margin-top: 0px;
     
   }
 
