@@ -306,7 +306,7 @@
     justify-content: center;
   }
 .coverSectionFormWrapper {
-  background: linear-gradient(135deg, #2581C4, #1d6ca0);
+  background: linear-gradient(135deg, #E94E1B, #2581C4);
   padding: 30px;
   border-radius: 25px;
   margin-top: 30px;
@@ -349,20 +349,67 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 768px) {
+  .coverSectionContainer {
+    height: 70vh;
+  }
+
+  .coverSectionOverlay {
+    padding: 15px;
+  }
+
+  .coverSectionWelcomeText {
+    font-size: 26px;
+  }
+
+  .coverSectionTitle {
+    font-size: 40px;
+  }
+
+  .coverSectionSubtitle {
+    font-size: 20px;
+  }
+
+  /* 🔥 Make search bar in a single row */
   .coverSectionSearchBar {
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap; /* allows wrapping if space is tight */
+    width: 100%;
+    gap: 8px;
+    justify-content: center;
   }
-  
-  .search-input-container {
-    flex: 1 1 100%;
-  }
-  
-  .coverSectionQualityDropdown {
-    flex: 1 1 45%;
-  }
-  
+
+  /* ✅ Make inputs/buttons same size */
+  .coverSectionSearchInput,
+  .coverSectionQualityDropdown,
   .coverSectionSearchButton {
-    flex: 1 1 45%;
+    flex: 1 1 30%;
+    min-width: 30%;
+    font-size: 0.84rem;
+    padding: 8px;
+  }
+
+  /* 🔥 Last 3 dropdowns in a single row */
+  .coverSectionFilterBar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 3px;
+    width: 100%;
+    /* margin-top: 10px; */
+    
+  }
+
+  .coverSectionFilterDropdown {
+    flex: 1 1 30%;
+    min-width: 30%;
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .suggestions-dropdown {
+    width: 100%;
+    margin: 0;
+    font-size: 0.8rem;
   }
 }
