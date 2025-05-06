@@ -1,145 +1,105 @@
-/* General form container */
-.staff-form-container {
-    padding: 30px 20px;
-    background: #f7f7f7;
-    max-width: 1000px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: "Inter", sans-serif;
-}
-
-/* Form title */
-.staff-form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #321087;
-}
-
-/* Form layout */
-.staff-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Form rows (grouping 2 columns) */
-.form-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* Each form group */
-.form-group {
-    flex: 1;
-    min-width: 220px;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.form-group input,
-.form-group select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    width: 100%;
-}
-
-/* Age range select */
-.age-range {
-    display: flex;
-    gap: 10px;
-}
-
-.age-range select {
-    flex: 1;
-}
-
-/* Fees */
-.form-fees {
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/* Payment section */
-.payment-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.payment-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-}
-
-/* Add payment method */
-.add-payment-method {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #321087;
-    cursor: pointer;
-}
-
-/* Submit button */
-.submit-btn {
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #321087;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    width: 100%;
-}
-
-.submit-btn:hover {
-    background-color: #5e32c0;
-}
-
-/* Calendar icon inside input */
-.input-with-icon {
+.form-list-page {
     position: relative;
+    padding: 30px 20px;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    z-index: 1;
+    background: linear-gradient(135deg, #f6f3ff 0%, #e3dbd7 100%);
 }
 
-.calendar-icon {
+/* The background image */
+.form-list-bg-img {
     position: absolute;
-    right: 10px;
-    color: #999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(4px) brightness(0.8);
+    z-index: -2;
+    pointer-events: none;
+    user-select: none;
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
-    .staff-form-container {
-        padding: 20px 10px;
-       
-    }
+/* Optional: overlay effect */
+.form-list-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4); /* light overlay */
+    z-index: -1;
+}
 
-    .form-row {
-        flex-direction: column;
-    }
+.form-list-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #321087;
+}
 
-    .form-group {
-        min-width: 100%;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.form-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    border: 2px solid #321087;
+}
+
+.form-icon {
+    margin-bottom: 15px;
+    color: #321087;
+}
+
+.form-name {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-action {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
     }
-   .Mr{
-    margin-top: 100px;
-   }
+}
+
+@media (max-width: 480px) {
+    .form-list-title {
+        font-size: 22px;
+    }
+    .form-card {
+        padding: 20px 15px;
+    }
 }

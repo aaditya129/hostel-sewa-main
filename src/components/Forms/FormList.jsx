@@ -9,7 +9,7 @@ import { FaWpforms } from 'react-icons/fa';
 const forms = [
   { name: 'Staff Form', path: '/form/staff' },
   { name: 'Job Form', path: '/form/job' },
-  { name: 'Recommendation', path: '/form/recommendation' },
+  { name: 'Recommendation', path: '/form/recommend' },
   { name: 'Hostel Purchase Form', path: '/form/purchase' },
   { name: 'Hostel Sales Form', path: '/form/sales' },
   { name: 'Hostel Monitoring Form', path: '/form/monitoring' },
@@ -22,6 +22,11 @@ const FormList = () => {
     <>
       <Navbar />
       <div className="form-list-page">
+        <img
+          src="https://www.shutterstock.com/image-illustration/3d-clipboard-pencil-on-pink-600nw-2107562936.jpg"
+          alt="Forms Background"
+          className="form-list-bg-img"
+        />
         <h2 className="form-list-title">📄 All Available Forms</h2>
         <div className="form-grid">
           {forms.map((form, index) => (
