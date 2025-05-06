@@ -161,7 +161,7 @@ const Navbar = ({
 ) : (
   <>
     <li onClick={login} className="user-login">User Login</li>
-    <li onClick={form_staff} className="user-login">Forms</li>
+    <li onClick={form} className="user-login">Forms</li>
   </>
 )}
   

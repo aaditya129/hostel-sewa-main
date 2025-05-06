@@ -8,10 +8,10 @@ const Job_form = () => {
 
    <Navbar/>
    <div className="gap"></div>
-   <div style={{ width: '80%', margin: '0 auto', fontFamily: 'Inter, sans-serif', lineHeight: '1.6', color: '#333' }}>
+   <div style={{ width: '80%', margin: '0 auto', marginTop: '50px', fontFamily: 'Inter, sans-serif', lineHeight: '1.6', color: '#333' }}>
       {/* Greeting Section */}
       <div style={{ textAlign: 'left' }}>
-        <p>Mr. Director</p>
+        <p className='Mr' >Mr. Director</p>
         <p>Hostel Service Pvt.Ltd</p>
       </div>
 

@@ -47,6 +47,8 @@ import AdminDashboard from './AdminDashboard.jsx'
 import UserBookings from './pages/UserBookings.jsx'
 import Form from './pages/Form.jsx'
 import ChatWidget from './components/ChatWidget.jsx';
+import FormList from './components/Forms/FormList.jsx'; // 🔄 update path as per your folder
+
 
 const App = (props) => {
   return (
@@ -74,9 +76,11 @@ const App = (props) => {
     <Route path="/login/owner" element={<Owner_login />} />
     <Route path="/register/owner" element={<Owner_register />} />
     <Route path="/register/student" element={<Register_form />} />
+    <Route path="/form" element={<FormList />} />
+
     <Route path="/form/staff" element={<Staff_form />} />
     <Route path="/form/job" element={<Job_form />} />
-    <Route path="/form/recommend" element={<Recommend />} />
+    <Route path="/form/recommendation" element={<Recommend />} />
     <Route path="/location" element={<Location_hostel />} />
     <Route path="/admin" element={<AdminDashboard />} />
     <Route path="/chat" element={<ChatWidget />} />

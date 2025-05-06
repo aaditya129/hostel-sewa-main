@@ -1,0 +1,145 @@
+/* General form container */
+.staff-form-container {
+    padding: 30px 20px;
+    background: #f7f7f7;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", sans-serif;
+}
+
+/* Form title */
+.staff-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #321087;
+}
+
+/* Form layout */
+.staff-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form rows (grouping 2 columns) */
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Each form group */
+.form-group {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Age range select */
+.age-range {
+    display: flex;
+    gap: 10px;
+}
+
+.age-range select {
+    flex: 1;
+}
+
+/* Fees */
+.form-fees {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Payment section */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* Add payment method */
+.add-payment-method {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #321087;
+    cursor: pointer;
+}
+
+/* Submit button */
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #321087;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #5e32c0;
+}
+
+/* Calendar icon inside input */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 10px;
+    color: #999;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .staff-form-container {
+        padding: 20px 10px;
+       
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        min-width: 100%;
+    }
+   .Mr{
+    margin-top: 100px;
+   }
+}

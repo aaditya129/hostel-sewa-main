@@ -12,6 +12,8 @@
     border-radius: 8px;
     margin-top: 70px;
   
+
+
   }
   
   .staff-form-container h2 {
@@ -191,4 +193,14 @@
   .submit-button:hover {
     background-color: #0056b3;
   }
+  @media (max-width: 600px) {
+  .staff-form-container ,.staff-form{
+    margin-top: 50px;
+
+  }
+
+  .Mr{
+    margin-top: 100px;
+   }}
+    
   

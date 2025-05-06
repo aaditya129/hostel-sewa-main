@@ -37,7 +37,7 @@ const StaffWantedForm = () => {
     <>
     <Navbar/>
     <div className="staff-form-container">
-      <h2>Staff Wanted Form</h2>
+      <h2 className='Mr'>Staff Wanted Form</h2>
       <form className="staff-form">
         <div className="form-row">
           <div className="form-group">
