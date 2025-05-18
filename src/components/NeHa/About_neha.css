@@ -1,77 +1,124 @@
-.sos-wrapper {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  margin-top: 20px;
-}
-
-.sos-background img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  filter: brightness(0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.sos-content {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-  color: #333;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.sos-content h1 {
+.sos-main {
   text-align: center;
-  font-size: 28px;
-  font-weight: 700;
+  padding: 30px;
+  background-color: #f4f4f4;
+}
+
+.sos-heading {
+  font-size: 1.5rem;
+  color: #12357e;
   margin-bottom: 20px;
 }
 
-.intro-text {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 16px;
-  color: #444;
-}
-
-.sos-table {
+.search-bar {
+  margin: 20px auto;
   width: 100%;
-  border-collapse: collapse;
-  background-color: white;
+  max-width: 400px;
 }
 
-.sos-table th, .sos-table td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
-  font-size: 15px;
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-.sos-table th {
-  background-color: #f3f3f3;
+.gif-banner {
+  width: 100%;
+  background: #c83737;
+  color: white;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.sos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.sos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.sos-card {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.sos-card:hover {
+  transform: scale(1.05);
+}
+
+.sos-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sos-card-title {
+  margin-top: 10px;
   font-weight: 600;
+  font-size: 1rem;
 }
 
-@media (max-width: 480px) {
-  .sos-wrapper{
-    margin-top: 100px;
-  }
-  .sos-content {
-    padding: 30px 15px;
-  }
+.sos-card {
+  background: white;
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s ease;
+}
 
-  .sos-content h1 {
-    font-size: 22px;
-  }
+.sos-card img {
+  max-width: 100%;
+  height: 80px;
+  object-fit: contain;
+}
 
-  .sos-table th, .sos-table td {
-    font-size: 14px;
-  }
+.sos-card p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+.sos-video-section {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.sos-video-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 50vh;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
 }
