@@ -5,6 +5,7 @@ import Partners from '../Partners';
 import Footer from '../Footer';
 import axios from 'axios';
 import './Store.css';
+import StoreHeader from './StoreHeader';
 
 const Store = () => {
   const navigate = useNavigate();
@@ -68,6 +69,7 @@ const Store = () => {
   return (
     <>
       <Navbar />
+      <StoreHeader/>
       <div className="store-layout">
         {/* Top bar with categories + filter */}
         <div className="top-bar">

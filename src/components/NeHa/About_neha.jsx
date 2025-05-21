@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import './About_neha.css';
 import sosImg from './sos.jpg';
 
+import logo from '../../assets/logo.png' 
 const sosData = [
   { title: 'Nepal Hostel Association', img: sosImg },
   { title: 'Hostel Bebasai Sangh', img: sosImg },
@@ -29,7 +30,15 @@ const SosPage = () => {
   return (
     <>
       <Navbar />
-
+<div className="store-header-container">
+      <div className="orange-triangle">
+        <img src={logo} alt="Store Logo" className="store-logo" />
+        {/* Changed content to "SOS" */}
+        <h2 className="store-title">SOS</h2>
+        {/* Changed content to "A complete solution for Hostelers" */}
+        <p className="tagline">A complete solution for Hostelers</p>
+      </div>
+    </div>
       <div className="sos-main">
         <h2 className="sos-heading">
           Here is many types of contact number. You can search and call directly what you want.

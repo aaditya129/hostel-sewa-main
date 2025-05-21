@@ -1,0 +1,133 @@
+/* src/components/StoreHeader.css */
+.store-header-container {
+  display: flex;
+  justify-content: center; /* Center the triangle horizontally */
+  width: 100%; /* Take full width of its parent */
+  /* padding-top: 20px; */
+  padding-bottom: 40px; /* More padding at the bottom to give space for the point */
+  background-color: #ADD8E6; 
+}
+
+.orange-triangle {
+  position: relative; /* For positioning logo, text, and pseudo-element */
+  background-color: #D2691E   ; /* Vibrant orange, match your image */
+  width: 28%; /* Adjust the width of the main body of the triangle */
+  max-width: 700px; /* Set a maximum width for larger screens */
+  padding: 40px;
+  border-radius: 0 0 15px 15px; /* Round the bottom corners of the main rectangle */
+  text-align: center;
+  color: white; /* White text for contrast */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  z-index: 1; /* Ensure it stays above other elements if needed */
+  height: 250px;
+}
+
+/* Create the pointed bottom using a pseudo-element */
+.orange-triangle::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; /* Controls how far down the point extends */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the point */
+  border-left: 200px solid transparent; /* Half width of the base of the point */
+  border-right: 200px solid transparent; /* Other half width of the base of the point */
+  border-top: 40px solid #D2691E ; /* Height and color of the point (match triangle color) */
+  z-index: 0; /* Ensure it's behind the main triangle content if overlapping issues arise, though not strictly necessary here */
+}
+
+
+.store-logo {
+  width: 80px; /* Adjust logo size */
+  height: auto;
+}
+
+.welcome-text {
+  font-family: 'Arial', sans-serif; /* Example font, adjust as needed */
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: normal; /* Often welcome text is not super bold */
+}
+
+.store-title {
+  font-family: 'Georgia', serif; /* Example font, adjust as needed */
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1E3A8A; /* Dark blue color for "OUR STORE" to match the image */
+  font-weight: bold;
+}
+
+.tagline {
+  font-family: 'Verdana', sans-serif; /* Example font, adjust as needed */
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+/* Responsive adjustments for smaller screens */
+/* --- Responsive adjustments for smaller screens (MOBILE VIEW ONLY) --- */
+@media (max-width: 768px) {
+  .orange-triangle {
+    width: 85%; /* Wider on tablet/mid-size mobile screens */
+    padding: 30px 20px; /* Adjust padding for content */
+    height: auto; /* <<< CRITICAL: Allow height to adjust based on content */
+  }
+
+  .store-logo {
+    width: 60px; /* Smaller logo on mobile */
+    margin-top: -15px; /* Adjust logo position for mobile */
+    margin-bottom: 3px;
+  }
+
+  /* No .welcome-text in JSX, so this won't apply */
+  .welcome-text {
+    font-size: 1.5em;
+  }
+
+  .store-title {
+    font-size: 2.8em; /* Adjusted font size for "SOS" on mobile */
+    margin-bottom: 8px;
+  }
+
+  .tagline {
+    font-size: 0.9em; /* Adjusted font size for tagline on mobile */
+    margin-bottom: 0;
+  }
+
+  .orange-triangle::after {
+    bottom: -30px; /* Adjust point height for mobile */
+    /* Adjusted border-left/right to be proportional to mobile width,
+       but still wide enough to be visible */
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-top: 30px solid #D2691E; /* Corrected color to match main triangle */
+  }
+}
+
+@media (max-width: 480px) {
+  .orange-triangle {
+    width: 95%; /* Even wider on very small mobile screens */
+    padding: 20px 15px; /* Reduce padding further */
+    height: auto; /* <<< CRITICAL: Ensure auto height for small screens */
+  }
+
+  /* No .welcome-text in JSX, so this won't apply */
+  .welcome-text {
+    font-size: 1.2em;
+  }
+  .store-title {
+    font-size: 2.2em; /* Adjusted font size for "SOS" on very small mobile */
+    margin-bottom: 5px;
+  }
+  .tagline {
+    font-size: 0.8em; /* Adjusted font size for tagline on very small mobile */
+  }
+  .orange-triangle::after {
+    bottom: -25px;
+    /* Adjusted border-left/right for very small mobile, proportional */
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 25px solid #D2691E; /* Corrected color to match main triangle */
+  }
+}
