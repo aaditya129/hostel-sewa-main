@@ -13,7 +13,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
-  /* margin-bottom: 20px; */
   background: linear-gradient(135deg, #f6f3ff 0%, #e3dbd7 100%);
   padding: 15px;
   border-radius: 10px;
@@ -47,6 +46,7 @@
   color: white;
 }
 
+/* Default state for filter section (desktop/larger screens) */
 .filter-section {
   min-width: 180px;
 }
@@ -61,7 +61,7 @@
   width: 100%;
 }
 
-/* Search Bar */
+/* Search Bar (desktop/larger screens) */
 .search-bar-wrapper {
   display: flex;
   justify-content: center;
@@ -84,17 +84,44 @@
   outline: none;
 }
 
-/* Main */
+/* Category Heading Wrapper */
+.category-heading-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0px;
+  padding: 0 15px;
+}
+
+.category-display-heading {
+  font-size: 24px;
+  font-weight: bold;
+ background: linear-gradient(45deg, #FF7E5F 0%, #FEB47B 50%, #007bff 100%); /* Adjust colors as desired */
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 0;
+  
+  border-radius: 25px;
+  width: 200px;
+  font-family: "Playpen Sans Deva", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-weight: 200px;
+  font-style: normal;
+
+
+}
+
+/* Main Section */
 .main-section {
   flex: 1;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* force 4 in a row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
 
 .product-card {
   background-color: #fff;
@@ -136,8 +163,13 @@
   font-weight: bold;
   margin: 30px 0 20px;
 }
-
-/* Responsive: Mobile */
+.search-filter{
+  display: flex;
+}
+.filter-section{
+  margin-top: 25px;
+}
+/* --- Responsive: Mobile --- */
 @media (max-width: 768px) {
   .top-bar {
     flex-direction: column;
@@ -149,7 +181,16 @@
     overflow-x: auto;
     width: 100%;
     padding-bottom: 10px;
+    /* Hide scrollbar for aesthetic, but allow scrolling */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
+
+  /* Hide scrollbar for webkit browsers */
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
 
   .tab {
     white-space: nowrap;
@@ -157,22 +198,58 @@
     padding: 6px 12px;
   }
 
+  /* NEW: Wrapper for search and filter on mobile */
+  .search-and-filter-mobile-wrapper {
+    display: flex;
+    flex-direction: row; /* Make them sit side-by-side */
+    gap: 10px; /* Space between search and filter */
+    padding: 0 15px; /* Match overall layout padding */
+    margin: 10px 0 20px; /* Adjust spacing as needed */
+    align-items: center; /* Vertically align items */
+    width: 100%; /* Take full width of parent */
+  }
+
+  .search-bar-wrapper {
+    flex-grow: 1; /* Allow search bar to take available space */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+
+  .search-input {
+    width: 100%; /* Make search input fill its new flexible container */
+    max-width: none; /* Remove max-width constraint for mobile */
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
   .filter-section {
-    width: 100%;
+    flex-shrink: 0; /* Prevent filter from shrinking too much */
+    width: 120px; /* Give filter a fixed width on mobile */
+    min-width: unset; /* Remove min-width constraint */
   }
 
   .sort-dropdown {
     width: 100%;
+    font-size: 13px; /* Slightly smaller font for mobile */
+    padding: 8px 10px; /* Adjust padding */
   }
 
-  .search-input {
-    width: 100%;
-    font-size: 13px;
-    padding: 8px 12px;
+  .product-grid {
+    grid-template-columns: 1fr !important; /* 1 in a row for mobile */
+  }
+
+  .product-card {
+    width: 100%; /* Ensure cards take full width */
+  }
+
+  .category-heading-wrapper {
+    margin-top: 10px; /* Adjust margin after tabs and before search/filter */
+    margin-bottom: 10px;
   }
 }
 
-/* Small Mobile */
+
+/* Small Mobile (e.g., 480px or less) */
 @media (max-width: 480px) {
   .heading-titles {
     font-size: 18px;
@@ -181,9 +258,48 @@
   .top-bar{
     margin-top: 80px;
   }
+  .category-display-heading {
+    font-size: 20px;
+  }
+  .filter-section{
+  margin-top: 8px;
+  margin-left: 10px;
 }
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: 1fr !important; /* 1 in a row for mobile */
+}
+/* Load More Button */
+.load-more-btn {
+  display: block; /* Make it a block element to take full width for centering */
+  width: fit-content; /* Adjust width to content */
+  margin: 30px auto; /* Center horizontally with auto margins, provide vertical spacing */
+  padding: 12px 25px; /* Ample padding for a good touch target */
+  background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Vibrant gradient background */
+  color: white; /* White text for contrast */
+  border: none; /* No border */
+  border-radius: 25px; /* Heavily rounded corners */
+  font-size: 16px; /* Readable font size */
+  font-weight: 600; /* Bold text */
+  cursor: pointer; /* Indicate it's clickable */
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: center; /* Ensure text is centered within the button */
+}
+
+.load-more-btn:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Reverse gradient or slightly different shade */
+}
+
+.load-more-btn:active {
+  transform: translateY(0); /* Push down effect on click */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+}
+
+/* Responsive adjustments for smaller screens if needed */
+@media (max-width: 480px) {
+  .load-more-btn {
+    padding: 10px 20px; /* Slightly less padding on very small screens */
+    font-size: 14px; /* Slightly smaller font */
+    margin: 20px auto; /* Adjust margin */
   }
 }

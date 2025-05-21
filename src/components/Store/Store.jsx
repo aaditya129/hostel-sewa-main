@@ -12,6 +12,7 @@ const Store = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [category, setCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [visibleCount, setVisibleCount] = useState(10); // pagination control
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,6 +29,7 @@ const Store = () => {
 
   useEffect(() => {
     handleFilterChange();
+    setVisibleCount(10); // reset pagination on filter/search change
   }, [category, searchTerm]);
 
   const handleProductClick = (id) => {
@@ -55,6 +57,14 @@ const Store = () => {
     setFilteredProducts(sorted);
   };
 
+  // Function to get the display name for the category
+  const getCategoryDisplayName = () => {
+    if (category === 'all') {
+      return 'All Items';
+    }
+    return category; // For other categories, use the category name directly
+  };
+
   return (
     <>
       <Navbar />
@@ -70,20 +80,8 @@ const Store = () => {
             <span className={`tab ${category === 'Kitchen Essentials' ? 'active' : ''}`} onClick={() => setCategory('Kitchen Essentials')}>🍳 Kitchen</span>
             <span className={`tab ${category === 'Decor' ? 'active' : ''}`} onClick={() => setCategory('Decor')}>🕰️ Decor</span>
           </div>
-
-          <div className="filter-section">
-            <select
-              className="sort-dropdown"
-              onChange={(e) => handleSortChange(e.target.value)}
-            >
-              <option value="highToLow">High to Low (₹)</option>
-              <option value="lowToHigh">Low to High (₹)</option>
-              <option value="recent">Recent</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Search Bar */}
+   {/* New position for the Search Bar */}
+   <div className="search-filter">
         <div className="search-bar-wrapper">
           <input
             type="text"
@@ -94,11 +92,25 @@ const Store = () => {
           />
         </div>
 
-        {/* Main Section */}
+          <div className="filter-section">
+            <select className="sort-dropdown" onChange={(e) => handleSortChange(e.target.value)}>
+              <option value="highToLow">High to Low (₹)</option>
+              <option value="lowToHigh">Low to High (₹)</option>
+              <option value="recent">Recent</option>
+            </select>
+          </div>
+        </div>
+</div>
+        {/* New position for the category heading */}
+        <div className="category-heading-wrapper">
+          <h2 className="heading-titles category-display-heading">{getCategoryDisplayName()}</h2>
+        </div>
+
+     
+        {/* Main Section - now contains only the product grid */}
         <div className="main-section">
-          <h2 className="heading-titles">Available Products</h2>
           <div className="product-grid">
-            {filteredProducts.map((product) => (
+            {filteredProducts.slice(0, visibleCount).map((product) => (
               <div
                 key={product._id}
                 className="product-card"
@@ -115,6 +127,13 @@ const Store = () => {
               </div>
             ))}
           </div>
+
+          {/* Load More Button */}
+          {visibleCount < filteredProducts.length && (
+            <div className="load-more-btn" onClick={() => setVisibleCount(prev => prev + 10)}>
+              Load More..
+            </div>
+          )}
         </div>
       </div>
       <Partners />

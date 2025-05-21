@@ -32,7 +32,7 @@ const SosPage = () => {
 
       <div className="sos-main">
         <h2 className="sos-heading">
-          Here is many types of contact number. You can search and call direct what you want.
+          Here is many types of contact number. You can search and call directly what you want.
         </h2>
 
         <div className="search-bar">
